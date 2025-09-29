@@ -81,14 +81,6 @@ const treeList: TreeViewBaseItem[] = [
             },
         ],
     },
-    {
-        id: 'tree-view',
-        label: 'Tree View',
-        children: [
-            { id: 'tree-view-community', label: '@mui/x-tree-view' },
-            { id: 'tree-view-pro', label: '@mui/x-tree-view-pro' },
-        ],
-    },
 ];
 
 
