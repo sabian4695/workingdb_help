@@ -1,5 +1,5 @@
 "use client"
-import type { Metadata } from "next";
+import React from "react";
 import "./globals.css";
 import { createTheme } from "@mui/material/styles";
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,6 +11,9 @@ import Image from 'next/image'
 import Box from '@mui/material/Box';
 import { RichTreeView } from '@mui/x-tree-view/RichTreeView';
 import { TreeViewBaseItem } from '@mui/x-tree-view/models';
+import Divider from '@mui/material/Divider';
+import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 export const primaryMain = '#415d66ff'
 export const secondaryMain = '#51695eff'
@@ -33,9 +36,10 @@ const treeList: TreeViewBaseItem[] = [
     id: 'gettingstarted',
     label: 'Getting Started',
     children: [
-      { id: 'what-is-it', label: 'What is WorkingDB?' },
-      { id: 'first-open', label: 'First Open' },
-      { id: 'basic-layout', label: 'Basic Layout' },
+      { id: 'gettingstarted#what-is-workingDB', label: 'What is WorkingDB?' },
+      { id: 'gettingstarted#getting-access', label: 'Getting Access' },
+      { id: 'gettingstarted#first-open', label: 'First Open' },
+      { id: 'gettingstarted#basic-layout', label: 'Basic Layout' },
     ],
   },
   {
@@ -106,6 +110,19 @@ const treeList: TreeViewBaseItem[] = [
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const router = useRouter()
+  const pathName = usePathname()
+  const [lastSelectedItem, setLastSelectedItem] = React.useState<string | null>(
+    null,
+  );
+
+  const handleItemSelectionToggle = (event: any, itemId: string) => {
+    setLastSelectedItem(itemId);
+    if (pathName !== '/' + itemId) {
+      router.push('/' + itemId)
+    }
+  };
+
   return (
     <html lang="en">
       <body>
@@ -114,33 +131,39 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <nav>
             <AppBar component="nav" elevation={5} variant='outlined'>
               <Toolbar variant='dense'>
-                <Image
-                  height='30'
-                  width='30'
-                  src='/images/logo.png'
-                  alt='logo'
-                  loading="lazy"
-                />
-                <Typography
-                  variant="h6"
-                  component="div"
-                  sx={{ fontWeight: '200', flexGrow: 1, ml: 1 }}
-                >
-                  WorkingDB
-                </Typography>
+                <Box sx={{ display: 'flex' }}>
+                  <Image
+                    height='30'
+                    width='30'
+                    src='/images/logo.png'
+                    alt='logo'
+                    loading="lazy"
+                    onClick={() => router.push('/')}
+                  />
+                  <Typography
+                    variant="h6"
+                    component="div"
+                    sx={{ fontWeight: '200', flexGrow: 1, ml: 1 }}
+                  >
+                    WorkingDB
+                  </Typography>
+                </Box>
               </Toolbar>
             </AppBar>
           </nav>
           <Toolbar />
-          <Box sx={{ bgcolor: 'secondary.dark', width: 300, height: 'auto' }}>
-            <RichTreeView items={treeList} />
-          </Box>
-          <Box sx={{ ml: 39, mr: 1, position: 'absolute', top: 60, alignItems: 'center', textAlign: 'center', bgcolor: 'primary.main', width: 'auto', height: 'auto', borderLeft: 3 }}>
-            {children}
+          <Box sx={{ width: '100vw', display: 'flex', flexDirection: 'row' }} component="main">
+            <Box sx={{ width: '20vw', p: 1, display: 'flex', overflowY: 'auto', overflowX: 'hidden' }}>
+              <RichTreeView sx={{ height: '100%' }} items={treeList} onItemClick={handleItemSelectionToggle} />
+            </Box>
+            <Divider orientation="vertical" variant="middle" flexItem />
+            <Box sx={{ alignItems: 'top', flexGrow: 1, textAlign: 'center', maxWidth: '80vw', height: '90vh', display: 'flex', overflowY: 'auto', overflowX: 'hidden' }}>
+              {children}
+            </Box>
           </Box>
         </ThemeProvider>
       </body>
 
-    </html>
+    </html >
   );
 }
