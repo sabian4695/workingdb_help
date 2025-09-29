@@ -11,8 +11,6 @@ import { useRecoilState, useSetRecoilState } from "recoil";
 import { itemData } from "../src/components/allPhotos";
 import Head from 'next/head'
 import Image from 'next/image'
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 
 const keyStr =
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
@@ -74,20 +72,6 @@ export default function Gallery() {
                 <title>GALLERY | Jacob Brown Photos - Lancaster, Ohio Photographer / Videographer</title>
             </Head>
             <Grid container>
-                <Grid xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
-                    <ButtonGroup orientation={small ? 'horizontal' : 'vertical'} variant="text" size='small' color='primary'>
-                        <Button variant={filtVal=='' ? 'outlined' : 'text'} onClick={(event) => setFiltValue('')}>All</Button>
-                        <Button variant={filtVal=='engagement' ? 'outlined' : 'text'} onClick={(event) => setFiltValue('engagement')}>Engagement Pictures</Button>
-                        <Button variant={filtVal=='event' ? 'outlined' : 'text'} onClick={(event) => setFiltValue('event')}>Wedding / Events</Button>
-                        <Button variant={filtVal=='family' ? 'outlined' : 'text'} onClick={(event) => setFiltValue('family')}>Family Portraits</Button>
-                        <Button variant={filtVal=='pet' ? 'outlined' : 'text'} onClick={(event) => setFiltValue('pet')}>Pets</Button>
-                        <Button variant={filtVal=='baby' ? 'outlined' : 'text'} onClick={(event) => setFiltValue('baby')}>Newborn</Button>
-                        <Button variant={filtVal=='senior' ? 'outlined' : 'text'} onClick={(event) => setFiltValue('senior')}>Senior Photos</Button>
-                        <Button variant={filtVal=='product' ? 'outlined' : 'text'} onClick={(event) => setFiltValue('product')}>Product Photos</Button>
-                        <Button variant={filtVal=='headshot' ? 'outlined' : 'text'} onClick={(event) => setFiltValue('headshot')}>Professional Headshots</Button>
-                        <Button variant={filtVal=='location' ? 'outlined' : 'text'} onClick={(event) => setFiltValue('location')}>Location Shoots</Button>
-                    </ButtonGroup>
-                </Grid>
                 <Grid xs={12} style={{ lineHeight: 0 }} sx={{ overflow: 'hidden' }}>
                     <ImageList sx={{ width: '100%' }} cols={small ? 3 : 2} variant='masonry'>
                         {photosList.map((item, index) => (

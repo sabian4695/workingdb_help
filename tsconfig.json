@@ -23,10 +23,8 @@
   },
   "include": [
     "src",
-    "pages/about.tsx",
-    "pages/gallery.tsx",
-    "pages/pricing.tsx",
-    "pages/events.tsx",
+    "pages/gettingstarted.tsx",
+    "pages/search.tsx",
     "pages/Home.tsx"
   ],
   "exclude": [
