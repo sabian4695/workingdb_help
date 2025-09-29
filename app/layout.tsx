@@ -110,14 +110,10 @@ const treeList: TreeViewBaseItem[] = [
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const router = useRouter()
-  const pathName = usePathname()
-  const [lastSelectedItem, setLastSelectedItem] = React.useState<string | null>(
-    null,
-  );
+  const router: any = useRouter()
+  const pathName: any = usePathname()
 
   const handleItemSelectionToggle = (event: any, itemId: string) => {
-    setLastSelectedItem(itemId);
     if (pathName !== '/' + itemId) {
       router.push('/' + itemId)
     }

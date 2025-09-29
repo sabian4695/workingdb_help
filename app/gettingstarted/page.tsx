@@ -4,17 +4,17 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
 import Divider from '@mui/material/Divider';
-import Button from '@mui/material/Button';
+import Image from 'next/image'
 
 export default function App() {
     return (
         <>
             <Stack>
                 <Box sx={{ p: 10 }}>
-                    <img
+                    <Image
                         height='250'
+                        width='250'
                         src='/images/logo.png'
-                        srcSet={`${'/images/logo.png'}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                         alt='logo'
                         loading="lazy"
                     />
@@ -68,7 +68,7 @@ export default function App() {
                             \\nas01\allshare\wdbLink
                         </Typography>
                         <Typography variant="body1">
-                            You'll need to copy and paste that link into file explorer.
+                            You&aposll need to copy and paste that link into file explorer.
                         </Typography>
                     </Stack>
                 </Paper>
@@ -85,18 +85,18 @@ export default function App() {
                         </Typography>
                         <Box>
                             <Typography variant="body2" color='text.secondary'>
-                                First one - the "Enable Content" popup
+                                First one - the &apos;Enable Content&apos; popup
                             </Typography>
                             <Typography variant="body1">
-                                Just click "Enable Content" - it's that easy.
+                                Just click &apos;Enable Content&apos; - it&apos;s that easy.
                             </Typography>
                         </Box>
                         <Box>
                             <Typography variant="body2" color='text.secondary'>
-                                Next One - it may ask if you want to "Trust" this file.
+                                Next One - it may ask if you want to &apos;Trust&apos; this file.
                             </Typography>
                             <Typography variant="body1">
-                                Click "Yes". Trust me.
+                                Click &apos;Yes&apos;. Trust me.
                             </Typography>
                         </Box>
                     </Stack>
@@ -110,7 +110,7 @@ export default function App() {
                     <Stack spacing={3}>
                         <Typography variant="h5" color='text.secondary'>Typical Method</Typography>
                         <Typography variant="body1">
-                            I'll put some nice pictures here for you, eventually.
+                            I&apos;ll put some nice pictures here for you, eventually.
                         </Typography>
                     </Stack>
                 </Paper>
