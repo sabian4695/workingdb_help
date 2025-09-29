@@ -18,7 +18,7 @@ export default function index() {
           <meta name="robots" content="index,follow" />
           <link rel="apple-touch-icon" href="%PUBLIC_URL%/android-chrome-192x192.png" />
           <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-          <title>WorkingDB</title>
+          <title>WorkingDB - Help</title>
         </Head>
           <Home/>
     </>
