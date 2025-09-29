@@ -1,47 +1,11 @@
 import React from 'react';
-import Grid from '@mui/material/Unstable_Grid2';
-import { useRecoilState, useSetRecoilState } from "recoil";
-import { currentPhoto, filterVal, lightboxOpen, photos } from "../src/recoil/atoms";
-import { itemData } from "../src/components/allPhotos";
 import Head from 'next/head'
 import Box from '@mui/material/Box';
-
-const keyStr =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
-
-const triplet = (e1: number, e2: number, e3: number) =>
-    keyStr.charAt(e1 >> 2) +
-    keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
-    keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
-    keyStr.charAt(e3 & 63)
+import { SimpleTreeView } from '@mui/x-tree-view/SimpleTreeView';
+import { TreeItem } from '@mui/x-tree-view/TreeItem';
 
 export default function About() {
-    const [openModal, setOpenModal] = useRecoilState(lightboxOpen)
-    const [filtVal, setFiltValue] = useRecoilState(filterVal)
-    const [photosList, setPhotosList] = useRecoilState(photos)
-    const setCurPhoto = useSetRecoilState(currentPhoto)
-    function chipClick(title: string) {
-        setFiltValue(title)
-        setOpenModal(true)
-    }
 
-    React.useEffect(() => {
-        if (filtVal !== '') {
-            let shuffled = itemData
-                .map(value => ({ value, sort: Math.random() }))
-                .sort((a, b) => a.sort - b.sort)
-                .map(({ value }) => value)
-                .filter(x => x.category === filtVal)
-            setPhotosList(shuffled)
-        } else {
-            let shuffled = itemData
-                .map(value => ({ value, sort: Math.random() }))
-                .sort((a, b) => a.sort - b.sort)
-                .map(({ value }) => value)
-            setPhotosList(shuffled)
-        }
-        setCurPhoto(0)
-    }, [filtVal])
     return (
         <>
             <Head>
@@ -57,19 +21,35 @@ export default function About() {
                 <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
                 <title>ABOUT | Jacob Brown Photos - Lancaster, Ohio Photographer / Videographer</title>
             </Head>
-            <Grid container spacing={2} sx={{ m: 3, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Box
-                    sx={{
-                        width: 100,
-                        height: 100,
-                        borderRadius: 1,
-                        bgcolor: 'primary.main',
-                        '&:hover': {
-                        bgcolor: 'primary.dark',
-                        },
-                    }}
-                    />
-            </Grid>
+            <Box
+                sx={{
+                    width: 300,
+                    height: '100%',
+                    bgcolor: 'primary.main',
+                }}
+            >
+                <Box sx={{ minHeight: 352, minWidth: 250 }}>
+                    <SimpleTreeView>
+                        <TreeItem itemId="grid" label="Data Grid">
+                            <TreeItem itemId="grid-community" label="@mui/x-data-grid" />
+                            <TreeItem itemId="grid-pro" label="@mui/x-data-grid-pro" />
+                            <TreeItem itemId="grid-premium" label="@mui/x-data-grid-premium" />
+                        </TreeItem>
+                        <TreeItem itemId="pickers" label="Date and Time Pickers">
+                            <TreeItem itemId="pickers-community" label="@mui/x-date-pickers" />
+                            <TreeItem itemId="pickers-pro" label="@mui/x-date-pickers-pro" />
+                        </TreeItem>
+                        <TreeItem itemId="charts" label="Charts">
+                            <TreeItem itemId="charts-community" label="@mui/x-charts" />
+                            <TreeItem itemId="charts-pro" label="@mui/x-charts-pro" />
+                        </TreeItem>
+                        <TreeItem itemId="tree-view" label="Tree View">
+                            <TreeItem itemId="tree-view-community" label="@mui/x-tree-view" />
+                            <TreeItem itemId="tree-view-pro" label="@mui/x-tree-view-pro" />
+                        </TreeItem>
+                    </SimpleTreeView>
+                </Box>
+            </Box>
         </>
     )
 }

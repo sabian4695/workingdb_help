@@ -14,8 +14,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
-import {eventComing} from "./index";
-import {RecoilRoot} from "recoil";
+import { eventComing } from "./index";
+import { RecoilRoot } from "recoil";
 import Image from 'next/image'
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
@@ -23,8 +23,8 @@ import InputBase from '@mui/material/InputBase';
 import { styled, alpha } from '@mui/material/styles';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
-    props,
-    ref,
+  props,
+  ref,
 ) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -98,57 +98,48 @@ export default function App({ Component, pageProps }) {
   };
   return (
     <>
-    <RecoilRoot>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <AppBar component="nav" elevation={5} variant='outlined'>
-          <Toolbar variant='dense'>
-            <Image
+      <RecoilRoot>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <AppBar component="nav" elevation={5} variant='outlined'>
+            <Toolbar variant='dense'>
+              <Image
                 height='30'
                 width='30'
                 src='/images/logo.png'
                 alt='logo'
                 loading="lazy"
-            />
-            <Typography
+              />
+              <Typography
                 variant="h6"
                 component="div"
-                sx={{fontWeight: '200', flexGrow: 1, ml:0.5}}
-            >
-              WorkingDB
-            </Typography>
-            <Box sx={{ flexGrow: 1, display: 'flex'}}>
-              <Button color='inherit' variant='text' sx={{mx:1}} component={Link} href="/" startIcon={<HomeIcon />}>Home</Button>
-              <Button color='inherit' variant='text' sx={{mx:1}} component={Link} href="/gettingstarted" startIcon={<HomeIcon />}>Getting Started</Button>
-              <Button color='inherit' variant='text' sx={{mx:1}} component={Link} href="/apps" startIcon={<HomeIcon />}>Apps</Button>
-              <Button color='inherit' variant='text' sx={{mx:1}} component={Link} href="/search" startIcon={<HomeIcon />}>Part Searching / Oracle Reports</Button>
-              <Button color='inherit' variant='text' sx={{mx:1}} component={Link} href="/reports" startIcon={<HomeIcon />}>Reporting</Button>
-              <Button color='inherit' variant='text' sx={{mx:1}} component={Link} href="/settings" startIcon={<HomeIcon />}>Settings</Button>
-            </Box>
-            <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-          </Toolbar>
-        </AppBar>
-        <Box component="main"
-          sx={{p: 1, width:'100%'}}>
-          <Toolbar/>
-          <Component {...pageProps} />
-        </Box>
-        <Snackbar open={openSnack} autoHideDuration={6000} onClose={handleCloseSnack}>
-          <Alert onClose={handleCloseSnack} severity="info" sx={{ width: '100%' }}>
-            Test Alert!
-            <Button sx={{mx:1}} color='inherit' variant='outlined' size='small' component={Link} href="events">CLICK HERE</Button>
-            to learn more!
-          </Alert>
-        </Snackbar>
-      </ThemeProvider>
+                sx={{ fontWeight: '200', flexGrow: 1, ml: 0.5 }}
+              >
+                WorkingDB
+              </Typography>
+              <Search>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                  placeholder="Search…"
+                  inputProps={{ 'aria-label': 'search' }}
+                />
+              </Search>
+            </Toolbar>
+          </AppBar>
+          <Box component="main" sx={{ width: '100%' }}>
+            <Toolbar />
+            <Component {...pageProps} />
+          </Box>
+          <Snackbar open={openSnack} autoHideDuration={6000} onClose={handleCloseSnack}>
+            <Alert onClose={handleCloseSnack} severity="info" sx={{ width: '100%' }}>
+              Test Alert!
+              <Button sx={{ mx: 1 }} color='inherit' variant='outlined' size='small' component={Link} href="events">CLICK HERE</Button>
+              to learn more!
+            </Alert>
+          </Snackbar>
+        </ThemeProvider>
       </RecoilRoot>
     </>
   );
