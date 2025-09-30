@@ -54,81 +54,79 @@ type itemWithDis = TreeViewBaseItem<{
 
 const treeList: itemWithDis[] = [
   {
-    id: 'gettingstarted',
+    id: 'getting-started',
     label: 'Getting Started',
     children: [
-      { id: 'gettingstarted#what-is-workingDB', label: 'What is WorkingDB?' },
-      { id: 'gettingstarted#getting-access', label: 'Getting Access' },
-      { id: 'gettingstarted#first-open', label: 'First Open' },
-      { id: 'gettingstarted#basic-layout', label: 'Basic Layout' },
+      { id: 'getting-started#what-is-workingDB', label: 'What is WorkingDB?' },
+      { id: 'getting-started#getting-access', label: 'Getting Access' },
+      { id: 'getting-started#first-open', label: 'First Open' },
+      { id: 'getting-started#basic-layout', label: 'Basic Layout' },
     ],
   },
   {
-    id: 'pickers',
+    id: 'searching',
     label: 'Searching',
     children: [
       {
-        id: 'documents-group',
+        id: 'searching/part-documents',
         label: 'Part Documents',
         children: [
-          { id: 'docu1', label: '@mui/x-date-pickers' },
-          { id: 'docu2', label: '@mui/x-date-pickers-pro' },
+          { id: 'searching/part-documents#1', label: '@mui/x-date-pickers' },
+          { id: 'searching/part-documents#2', label: '@mui/x-date-pickers-pro' },
         ],
       },
       {
-        id: 'oracle-group',
+        id: 'searching/oracle',
         label: 'Oracle',
         children: [
-          { id: 'oracle1', label: '@mui/x-date-pickers' },
-          { id: 'oracl2', label: '@mui/x-date-pickers-pro' },
+          { id: 'searching/oracle#1', label: '@mui/x-date-pickers' },
+          { id: 'searching/oracle#2', label: '@mui/x-date-pickers-pro' },
         ],
       },
-      { id: 'search-bar ', label: 'Search Bar' },
+      { id: 'searching/search-bar ', label: 'Search Bar' },
     ],
-    disabled: true
   },
   {
     id: 'applications',
     label: 'Applications',
     children: [
       {
-        id: 'charts-community',
+        id: 'applications/part-projects-tracker',
         label: 'Part Projects Tracker',
         children: [
-          { id: 'ppOverview', label: 'Project Tracking Overview' },
-          { id: 'ppView', label: 'Viewing a Project' },
-          { id: 'ppDash', label: 'Part Project Dashboard' },
-          { id: 'ppTrackers', label: 'Project Trackers' },
-          {
-            id: 'ppComps',
-            label: 'Project Components',
-            children: [
-              { id: 'pp3', label: 'Issues' },
-              { id: 'pp4', label: 'Testing' },
-              { id: 'pp5', label: 'Trials' },
-              { id: 'pp6', label: 'Automation' },
-            ],
-          },
+          { id: 'applications/part-projects-tracker#project-tracking-overview', label: 'Project Tracking Overview' },
+          { id: 'applications/part-projects-tracker#viewing-a-project', label: 'Viewing a Project' },
+          { id: 'applications/part-projects-tracker#part-project-dashboard', label: 'Part Project Dashboard' },
+          { id: 'applications/part-projects-tracker#project-trackers', label: 'Project Trackers' },
         ],
       },
       {
-        id: 'programs',
+        id: 'applications/part-project-sub-apps',
+        label: 'Part Project Sub-Applications',
+        children: [
+          { id: 'applications/part-project-sub-app#part-issues', label: 'Issues' },
+          { id: 'applications/part-project-sub-app#part-testing', label: 'Testing' },
+          { id: 'applications/part-project-sub-app#part-trials', label: 'Trials' },
+          { id: 'applications/part-project-sub-app#part-automation', label: 'Automation' },
+        ],
+      },
+      {
+        id: 'applications#programs',
         label: 'Programs'
       },
       {
-        id: 'charts-pro',
+        id: 'applications#design-wos',
         label: 'Design WOs'
       },
       {
-        id: 'changepoint',
+        id: 'applications#changepoint',
         label: 'ChangePoint Control'
       },
       {
-        id: 'new-part-numbers',
+        id: 'applications#new-part-numbers',
         label: 'New Part Numbers'
       },
     ],
-    disabled: true
   },
 ];
 

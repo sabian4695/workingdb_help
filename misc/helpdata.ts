@@ -135,5 +135,65 @@ export const helpContent: helpPage[] = [
                 }
             }
         ]
+    },
+    {
+        pageId: "searching",
+        pageName: "Searching",
+        sections: [
+            {
+                sectionId: "part-docouments",
+                sectionTitle: "Part Documents",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+        ]
+    },
+    {
+        pageId: "applications",
+        pageName: "Applications",
+        sections: [
+            {
+                sectionId: "part-projects-tracker",
+                sectionTitle: "Part Projects Traker",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+        ]
     }
 ]
