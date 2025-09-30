@@ -14,6 +14,21 @@ import { TreeViewBaseItem } from '@mui/x-tree-view/models';
 import Divider from '@mui/material/Divider';
 import { useRouter } from 'next/navigation'
 import { usePathname } from 'next/navigation'
+import DialogTitle from '@mui/material/DialogTitle';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import Button from '@mui/material/Button';
+import SearchIcon from '@mui/icons-material/Search';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemButton from '@mui/material/ListItemButton';
+import InputAdornment from '@mui/material/InputAdornment';
+import TextField from '@mui/material/TextField';
+import Stack from '@mui/material/Stack';
+import { helpContent } from '../misc/helpdata'
 
 export const primaryMain = '#415d66ff'
 export const secondaryMain = '#51695eff'
@@ -128,6 +143,33 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       router.push('/' + itemId)
     }
   };
+  const [searchText, setSearchText] = React.useState('')
+  const [open, setOpen] = React.useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleSearchClick = (itemId: string) => {
+    setOpen(false);
+    router.push('/' + itemId)
+  };
+  function setText(event: any) {
+    setSearchText(event.target.value)
+    filterItems(event.target.value)
+  }
+
+  const [filterResults, setFilterResults] = React.useState(helpContent);
+
+  const filterItems = (targetText: string) => {
+    if (targetText.length > 0) {
+      const filtered = helpContent.filter((data) => JSON.stringify(data).toLowerCase().indexOf(targetText.toLowerCase()) !== -1);
+      setFilterResults(filtered)
+    } else {
+      setFilterResults(helpContent)
+    }
+  }
 
   return (
     <html lang="en">
@@ -137,7 +179,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <nav>
             <AppBar component="nav" elevation={5} variant='outlined'>
               <Toolbar variant='dense'>
-                <Box sx={{ display: 'flex' }}>
+                <Box sx={{ display: 'flex', flexGrow: 1 }}>
                   <Image
                     height='30'
                     width='30'
@@ -154,6 +196,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     WorkingDB
                   </Typography>
                 </Box>
+                <Button variant="contained" startIcon={<SearchIcon />} onClick={handleClickOpen}>
+                  Open Search
+                </Button>
               </Toolbar>
             </AppBar>
           </nav>
@@ -167,6 +212,45 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               {children}
             </Box>
           </Box>
+          <Dialog
+            open={open}
+            keepMounted
+            onClose={handleClose}
+          >
+            <DialogTitle>Search All Help Contents</DialogTitle>
+            <DialogContent dividers>
+              <Stack spacing={3}>
+                <DialogContentText>
+                  Type in the search bar, then click a result to go to that page.
+                </DialogContentText>
+                <TextField
+                  value={searchText}
+                  onChange={(event: any) => setText(event)}
+                  slotProps={{
+                    input: {
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <SearchIcon />
+                        </InputAdornment>
+                      ),
+                    },
+                  }}
+                  variant="standard"
+                />
+                <List dense sx={{ width: '100%', bgcolor: 'background.paper' }}>
+                  {filterResults.map(x => (
+                    <ListItemButton onClick={() => handleSearchClick(x.pageId)} key={x.pageId}>
+                      <ListItemText primary={x.pageName} secondary={x.sections[0].sectionTitle} />
+                    </ListItemButton>
+                  ))}
+                </List>
+              </Stack>
+
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleClose}>Close</Button>
+            </DialogActions>
+          </Dialog>
         </ThemeProvider>
       </body>
 
