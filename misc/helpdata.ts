@@ -128,8 +128,8 @@ export const helpContent: helpPage[] = [
                         {
                             color: 'text.primary',
                             variant: 'body1',
-                            text: "I\'ll put some nice pictures here for you, eventually.",
-                            image: '/public/images/gettingstarted/layout.png'
+                            text: "Here\'s the general layout of the front page.",
+                            image: '/images/gettingstarted/layout.png'
                         }
                     ]
                 }

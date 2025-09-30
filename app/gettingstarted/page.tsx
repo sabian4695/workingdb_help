@@ -6,6 +6,8 @@ import Paper from '@mui/material/Paper';
 import Divider from '@mui/material/Divider';
 import Image from 'next/image'
 import { helpContent } from '../../misc/helpdata'
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
 
 export default function App() {
     const helpText = helpContent.filter(x => x.pageId === 'gettingstarted')
@@ -34,20 +36,20 @@ export default function App() {
                         <Typography id={row.sectionId} variant="h3">
                             {row.sectionTitle}
                         </Typography>
-                        <Paper elevation={3} sx={{ p: 3, m: 5 }}>
+                        <Paper elevation={3} sx={{ borderRadius: '10px', p: 3, m: 5 }}>
                             <Stack spacing={3}>
                                 <Typography variant="h5" color='text.secondary'>{row.cards.title}</Typography>
                                 {row.cards.contents.map(x => (
                                     <Box key={x.text}>
                                         <Typography color={x.color} variant={x.variant} >{x.text}</Typography>
                                         {x.image !== undefined ?
-                                            <Image
-                                                height='250'
-                                                width='250'
-                                                src={x.image}
-                                                alt='image1'
-                                                loading="lazy"
-                                            />
+                                            <Card elevation={1} sx={{ borderRadius: '10px', alignSelf: 'center', justifySelf: 'center' }}>
+                                                <CardMedia
+                                                    component="img"
+                                                    src={x.image}
+                                                    sx={{ minHeight: 300 }}
+                                                />
+                                            </Card>
 
                                             : null}
                                     </Box>

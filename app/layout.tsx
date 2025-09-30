@@ -31,7 +31,13 @@ const theme = createTheme({
   }
 })
 
-const treeList: TreeViewBaseItem[] = [
+type itemWithDis = TreeViewBaseItem<{
+  id: string;
+  label: string;
+  disabled?: boolean;
+}>;
+
+const treeList: itemWithDis[] = [
   {
     id: 'gettingstarted',
     label: 'Getting Started',
@@ -64,6 +70,7 @@ const treeList: TreeViewBaseItem[] = [
       },
       { id: 'search-bar ', label: 'Search Bar' },
     ],
+    disabled: true
   },
   {
     id: 'applications',
@@ -106,8 +113,11 @@ const treeList: TreeViewBaseItem[] = [
         label: 'New Part Numbers'
       },
     ],
+    disabled: true
   },
 ];
+
+const isItemDisabled = (item: itemWithDis) => !!item.disabled;
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const router: any = useRouter()
@@ -150,7 +160,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Toolbar />
           <Box sx={{ width: '100vw', display: 'flex', flexDirection: 'row' }} component="main">
             <Box sx={{ width: '20vw', p: 1, display: 'flex', overflowY: 'auto', overflowX: 'hidden' }}>
-              <RichTreeView sx={{ height: '100%' }} items={treeList} onItemClick={handleItemSelectionToggle} />
+              <RichTreeView sx={{ height: '100%' }} items={treeList} onItemClick={handleItemSelectionToggle} isItemDisabled={isItemDisabled} />
             </Box>
             <Divider orientation="vertical" variant="middle" flexItem />
             <Box sx={{ alignItems: 'top', flexGrow: 1, textAlign: 'center', maxWidth: '80vw', height: '90vh', display: 'flex', overflowY: 'auto', overflowX: 'hidden' }}>
