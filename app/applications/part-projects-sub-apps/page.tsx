@@ -1,0 +1,47 @@
+import React from 'react';
+import Typography from "@mui/material/Typography";
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Paper from '@mui/material/Paper';
+import Divider from '@mui/material/Divider';
+import { helpContent } from '../../../misc/helpdata'
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+
+export default function App() {
+    const helpText = helpContent.filter(x => x.pageId === 'applications').filter(y => y.sections[0].sectionId === 'part-projects-sub-apps')
+    return (
+        <>
+            <Stack>
+                {helpText[0].sections.map(row => (
+                    <Box key={row.sectionId}>
+                        <Divider variant="middle" flexItem sx={{ m: 5 }} />
+                        <Typography id={row.sectionId} variant="h3">
+                            {row.sectionTitle}
+                        </Typography>
+                        <Paper elevation={3} sx={{ borderRadius: '10px', p: 3, m: 5 }}>
+                            <Stack spacing={3}>
+                                <Typography variant="h5" color='text.secondary'>{row.cards.title}</Typography>
+                                {row.cards.contents.map(x => (
+                                    <Box key={x.text}>
+                                        <Typography color={x.color} variant={x.variant} >{x.text}</Typography>
+                                        {x.image !== undefined ?
+                                            <Card elevation={1} sx={{ borderRadius: '10px', alignSelf: 'center', justifySelf: 'center' }}>
+                                                <CardMedia
+                                                    component="img"
+                                                    src={x.image}
+                                                    sx={{ minHeight: 300 }}
+                                                />
+                                            </Card>
+
+                                            : null}
+                                    </Box>
+                                ))}
+                            </Stack>
+                        </Paper>
+                    </Box>
+                ))}
+            </Stack>
+        </>
+    );
+}

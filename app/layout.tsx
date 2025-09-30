@@ -101,13 +101,13 @@ const treeList: itemWithDis[] = [
         ],
       },
       {
-        id: 'applications/part-project-sub-apps',
-        label: 'Part Project Sub-Applications',
+        id: 'applications/part-projects-sub-apps',
+        label: 'Part Projects Sub-Applications',
         children: [
-          { id: 'applications/part-project-sub-app#part-issues', label: 'Issues' },
-          { id: 'applications/part-project-sub-app#part-testing', label: 'Testing' },
-          { id: 'applications/part-project-sub-app#part-trials', label: 'Trials' },
-          { id: 'applications/part-project-sub-app#part-automation', label: 'Automation' },
+          { id: 'applications/part-projects-sub-app#part-issues', label: 'Issues' },
+          { id: 'applications/part-projects-sub-app#part-testing', label: 'Testing' },
+          { id: 'applications/part-projects-sub-app#part-trials', label: 'Trials' },
+          { id: 'applications/part-projects-sub-app#part-automation', label: 'Automation' },
         ],
       },
       {

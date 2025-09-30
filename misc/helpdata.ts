@@ -194,6 +194,30 @@ export const helpContent: helpPage[] = [
                     ]
                 }
             },
+            {
+                sectionId: "part-projects-sub-apps",
+                sectionTitle: "Part Projects Traker",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
         ]
     }
 ]
