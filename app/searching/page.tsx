@@ -8,54 +8,60 @@ import Image from 'next/image'
 import { helpContent } from '../../misc/helpdata'
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
+import Grow from '@mui/material/Grow';
 
 export default function App() {
     const helpText = helpContent.filter(x => x.pageId === 'searching')
     return (
         <>
             <Stack>
-                <Box sx={{ p: 10 }}>
-                    <Image
-                        height='250'
-                        width='250'
-                        src='/images/logo.png'
-                        alt='logo'
-                        loading="lazy"
-                    />
-                    <Typography
-                        sx={{ fontWeight: '100', letterSpacing: 7 }}
-                        variant={'h3'}
-                        color='text.secondary'
-                    >
-                        WorkingDB
-                    </Typography>
-                </Box>
+                <Grow in={true}>
+                    <Box sx={{ p: 10 }}>
+                        <Image
+                            height='250'
+                            width='250'
+                            src='/images/logo.png'
+                            alt='logo'
+                            loading="lazy"
+                        />
+                        <Typography
+                            sx={{ fontWeight: '100', letterSpacing: 7 }}
+                            variant={'h3'}
+                            color='text.secondary'
+                        >
+                            WorkingDB
+                        </Typography>
+                    </Box>
+                </Grow>
                 {helpText[0].sections.map(row => (
                     <Box key={row.sectionId}>
                         <Divider variant="middle" flexItem sx={{ m: 5 }} />
-                        <Typography id={row.sectionId} variant="h3">
-                            {row.sectionTitle}
-                        </Typography>
-                        <Paper elevation={3} sx={{ borderRadius: '10px', p: 3, m: 5 }}>
-                            <Stack spacing={3}>
-                                <Typography variant="h5" color='text.secondary'>{row.cards.title}</Typography>
-                                {row.cards.contents.map(x => (
-                                    <Box key={x.text}>
-                                        <Typography color={x.color} variant={x.variant} >{x.text}</Typography>
-                                        {x.image !== undefined ?
-                                            <Card elevation={1} sx={{ borderRadius: '10px', alignSelf: 'center', justifySelf: 'center' }}>
-                                                <CardMedia
-                                                    component="img"
-                                                    src={x.image}
-                                                    sx={{ minHeight: 300 }}
-                                                />
-                                            </Card>
-
-                                            : null}
-                                    </Box>
-                                ))}
-                            </Stack>
-                        </Paper>
+                        <Grow in={true} style={{ transitionDelay: '200ms' }}>
+                            <Typography id={row.sectionId} variant="h3">
+                                {row.sectionTitle}
+                            </Typography>
+                        </Grow>
+                        <Grow in={true} style={{ transitionDelay: '500ms' }}>
+                            <Paper elevation={3} sx={{ borderRadius: '10px', p: 3, m: 5 }}>
+                                <Stack spacing={3}>
+                                    <Typography variant="h5" color='text.secondary'>{row.cards.title}</Typography>
+                                    {row.cards.contents.map(x => (
+                                        <Box key={x.text}>
+                                            <Typography color={x.color} variant={x.variant} >{x.text}</Typography>
+                                            {x.image !== undefined ?
+                                                <Card elevation={1} sx={{ borderRadius: '10px', alignSelf: 'center', justifySelf: 'center' }}>
+                                                    <CardMedia
+                                                        component="img"
+                                                        src={x.image}
+                                                        sx={{ minHeight: 300 }}
+                                                    />
+                                                </Card>
+                                                : null}
+                                        </Box>
+                                    ))}
+                                </Stack>
+                            </Paper>
+                        </Grow>
                     </Box>
                 ))}
             </Stack>

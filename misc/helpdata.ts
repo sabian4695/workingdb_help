@@ -23,7 +23,7 @@ interface helpPage {
 
 export const helpContent: helpPage[] = [
     {
-        pageId: "gettingstarted",
+        pageId: "getting-started",
         pageName: "Getting Started",
         sections: [
             {
