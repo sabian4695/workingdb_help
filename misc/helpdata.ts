@@ -137,12 +137,582 @@ export const helpContent: helpPage[] = [
         ]
     },
     {
-        pageId: "searching",
-        pageName: "Searching",
+        pageId: 'searching',
+        pageName: 'Searching',
         sections: [
             {
-                sectionId: "part-docouments",
-                sectionTitle: "Part Documents",
+                sectionId: "searching",
+                sectionTitle: "Search",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+        ]
+    },
+    {
+        pageId: "general-search-layout",
+        pageName: "Part Search Overview",
+        sections: [
+            {
+                sectionId: "general-search-layout",
+                sectionTitle: "General Search Layout",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "org-specific-docs",
+                sectionTitle: "Org Specific Documents",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "quick-links",
+                sectionTitle: "Quick Links",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "search-bar",
+                sectionTitle: "File Search Bar",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "misc-items",
+                sectionTitle: "Miscellaneous",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+        ]
+    },
+    {
+        pageId: "oracle",
+        pageName: "Oracle Search",
+        sections: [
+            {
+                sectionId: "ecos",
+                sectionTitle: "ECOs",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "sifs",
+                sectionTitle: "SIFs (Sales Information Form)",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "item-categories",
+                sectionTitle: "Item Categories",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "item-categories",
+                sectionTitle: "Item Categories",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "customer-item-xref",
+                sectionTitle: "Customer Item Cross Reference",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "on-hand-quantity",
+                sectionTitle: "On Hand Quantity",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "bom",
+                sectionTitle: "BOM / Item Where Used",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "forecast",
+                sectionTitle: "Forecast Orders",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "open-orders",
+                sectionTitle: "Open Orders",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "cost",
+                sectionTitle: "Cost",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "pos",
+                sectionTitle: "POs",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "material-search",
+                sectionTitle: "Material Search",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "search-by-description",
+                sectionTitle: "Search By Description",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "routing",
+                sectionTitle: "Tool -> Part Number Routing",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "sif-item-report",
+                sectionTitle: "Part SIF Item Report",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+        ]
+    },
+    {
+        pageId: 'other-search',
+        pageName: 'Other Reports',
+        sections: [
+            {
+                sectionId: "cnl-lab-wos",
+                sectionTitle: "CNL Lab WOs",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "slb-tooling-notes",
+                sectionTitle: "SLB Tooling DB Notes",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "open-itrs",
+                sectionTitle: "Open ITRs",
                 cards: {
                     title: "Purpose & History",
                     contents: [

@@ -22,7 +22,6 @@ import DialogContentText from '@mui/material/DialogContentText';
 import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemButton from '@mui/material/ListItemButton';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -31,12 +30,9 @@ import Stack from '@mui/material/Stack';
 import { helpContent } from '../misc/helpdata'
 import { styled, alpha } from '@mui/material/styles';
 import ArticleIcon from '@mui/icons-material/Article';
-import DeleteIcon from '@mui/icons-material/Delete';
-import FolderOpenIcon from '@mui/icons-material/FolderOpen';
 import FolderRounded from '@mui/icons-material/FolderRounded';
 import ImageIcon from '@mui/icons-material/Image';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-import VideoCameraBackIcon from '@mui/icons-material/VideoCameraBack';
 import { useTreeItem, UseTreeItemParameters } from '@mui/x-tree-view/useTreeItem';
 import {
   TreeItemIconContainer,
@@ -49,8 +45,10 @@ import { TransitionProps } from '@mui/material/transitions';
 import { useSpring, animated } from '@react-spring/web';
 import Collapse from '@mui/material/Collapse';
 
-export const primaryMain = '#415d66ff'
-export const secondaryMain = '#51695eff'
+import HomeIcon from '@mui/icons-material/Home';
+
+export const primaryMain = '#5c8592ff'
+export const secondaryMain = '#698679ff'
 export const primaryRGB = '103, 155, 172'
 
 const theme = createTheme({
@@ -65,7 +63,24 @@ const theme = createTheme({
   }
 })
 
-type FileType = 'image' | 'pdf' | 'doc' | 'video' | 'folder' | 'pinned' | 'trash';
+type FileType = 'image' | 'pdf' | 'doc' | 'video' | 'folder' | 'pinned' | 'trash' | 'home';
+
+const getIconFromFileType = (fileType: FileType) => {
+  switch (fileType) {
+    case 'image':
+      return ImageIcon;
+    case 'pdf':
+      return PictureAsPdfIcon;
+    case 'doc':
+      return ArticleIcon;
+    case 'folder':
+      return FolderRounded;
+    case 'home':
+      return HomeIcon;
+    default:
+      return ArticleIcon;
+  }
+};
 
 type itemWithDis = TreeViewBaseItem<{
   id: string;
@@ -78,71 +93,73 @@ type itemWithDis = TreeViewBaseItem<{
 
 const treeList: itemWithDis[] = [
   {
+    id: '',
+    label: 'Home',
+    fileType: 'home'
+  },
+  {
     id: 'getting-started',
     label: 'Getting Started',
     children: [
-      { id: 'getting-started#what-is-workingDB', label: 'What is WorkingDB?' },
+      { id: 'getting-started#what-is-workingdb', label: 'What is WorkingDB?' },
       { id: 'getting-started#getting-access', label: 'Getting Access' },
       { id: 'getting-started#first-open', label: 'First Open' },
-      { id: 'getting-started#basic-layout', label: 'Basic Layout', fileType: 'pdf' },
+      { id: 'getting-started#basic-layout', label: 'Basic Layout' },
     ],
   },
   {
     id: 'searching',
-    label: 'Searching',
+    label: 'Searching / Reports',
     children: [
-      { id: 'searching/part-documents', label: 'Part Documents', subHeader: "Part Documents" },
-      { id: 'searching/part-documents#1', label: '@mui/x-date-pickers' },
-      { id: 'searching/part-documents#2', label: '@mui/x-date-pickers-pro' },
+      { id: 'searching/general-search-layout', label: 'Part Search Overview', subHeader: "Part Search Overview" },
+      { id: 'searching/general-search-layout#general-search-layout', label: 'General Search Layout' },
+      { id: 'searching/general-search-layout#org-specific-docs', label: 'Org Specific Documents' },
+      { id: 'searching/general-search-layout#quick-links', label: 'Quick Links' },
+      { id: 'searching/general-search-layout#search-bar', label: 'File Search Bar' },
+      { id: 'searching/general-search-layout#misc-items', label: 'Miscellaneous' },
+
       { id: 'searching/oracle', label: 'Oracle', subHeader: "Oracle" },
-      { id: 'searching/oracle#1', label: '@mui/x-date-pickers' },
-      { id: 'searching/oracle#2', label: '@mui/x-date-pickers-pro' },
-      { id: 'searching/search-bar#', label: 'Oracle', subHeader: "Oracle" },
-      { id: 'searching/search-bar', label: 'Search Bar' },
+      { id: 'searching/oracle#ecos', label: 'ECOs' },
+      { id: 'searching/oracle#sifs', label: 'SIFs (Sales Information Form)' },
+      { id: 'searching/oracle#item-categories', label: 'Item Categories' },
+      { id: 'searching/oracle#customer-item-xref', label: 'Customer Item Cross Reference' },
+      { id: 'searching/oracle#on-hand-quantity', label: 'On Hand Quantity' },
+      { id: 'searching/oracle#bom', label: 'BOM / Item Where Used' },
+      { id: 'searching/oracle#forecast', label: 'Forecast Orders' },
+      { id: 'searching/oracle#open-orders', label: 'Open Orders' },
+      { id: 'searching/oracle#cost', label: 'Cost' },
+      { id: 'searching/oracle#pos', label: 'POs' },
+      { id: 'searching/oracle#material-search', label: 'Material Search' },
+      { id: 'searching/oracle#search-by-description', label: 'Search By Description' },
+      { id: 'searching/oracle#routing', label: 'Tool -> Part Number Routing' },
+      { id: 'searching/oracle#sif-item-report', label: 'Part SIF Item Report' },
+
+      { id: 'searching/other-search', label: 'Other', subHeader: "Other Reports" },
+      { id: 'searching/other-search#cnl-lab-wos', label: 'CNL Lab WOs' },
+      { id: 'searching/other-search#slb-tooling-notes', label: 'SLB Tooling DB Notes' },
+      { id: 'searching/other-search#open-itrs', label: 'Open ITRs' },
     ],
   },
-  {
-    id: 'applications',
-    label: 'Applications',
-    children: [
-      {
-        id: 'applications/part-projects-tracker',
-        label: 'Part Projects Tracker',
-        children: [
-          { id: 'applications/part-projects-tracker#project-tracking-overview', label: 'Project Tracking Overview' },
-          { id: 'applications/part-projects-tracker#viewing-a-project', label: 'Viewing a Project' },
-          { id: 'applications/part-projects-tracker#part-project-dashboard', label: 'Part Project Dashboard' },
-          { id: 'applications/part-projects-tracker#project-trackers', label: 'Project Trackers' },
-        ],
-      },
-      {
-        id: 'applications/part-projects-sub-apps',
-        label: 'Part Projects Sub-Applications',
-        children: [
-          { id: 'applications/part-projects-sub-app#part-issues', label: 'Issues' },
-          { id: 'applications/part-projects-sub-app#part-testing', label: 'Testing' },
-          { id: 'applications/part-projects-sub-app#part-trials', label: 'Trials' },
-          { id: 'applications/part-projects-sub-app#part-automation', label: 'Automation' },
-        ],
-      },
-      {
-        id: 'applications#programs',
-        label: 'Programs'
-      },
-      {
-        id: 'applications#design-wos',
-        label: 'Design WOs'
-      },
-      {
-        id: 'applications#changepoint',
-        label: 'ChangePoint Control'
-      },
-      {
-        id: 'applications#new-part-numbers',
-        label: 'New Part Numbers'
-      },
-    ],
-  },
+  // {
+  //   id: 'applications',
+  //   label: 'Applications',
+  //   children: [
+  //     { id: 'applications/part-projects-tracker', label: 'Part Projects Tracker', subHeader: "Part Projects Tracker" },
+  //     { id: 'applications/part-projects-tracker#project-tracking-overview', label: 'Project Tracking Overview' },
+  //     { id: 'applications/part-projects-tracker#viewing-a-project', label: 'Viewing a Project' },
+  //     { id: 'applications/part-projects-tracker#part-project-dashboard', label: 'Part Project Dashboard' },
+  //     { id: 'applications/part-projects-tracker#project-trackers', label: 'Project Trackers' },
+  //     { id: 'applications/part-projects-sub-apps', label: 'Part Projects Sub-Applications', subHeader: "Part Projects Sub-Applications" },
+  //     { id: 'applications/part-projects-sub-app#part-issues', label: 'Issues' },
+  //     { id: 'applications/part-projects-sub-app#part-testing', label: 'Testing' },
+  //     { id: 'applications/part-projects-sub-app#part-trials', label: 'Trials' },
+  //     { id: 'applications/part-projects-sub-app#part-automation', label: 'Automation' },
+  //     { id: 'applications#programs', label: 'Programs' },
+  //     { id: 'applications#design-wos', label: 'Design WOs' },
+  //     { id: 'applications#changepoint', label: 'ChangePoint Control' },
+  //     { id: 'applications#new-part-numbers', label: 'New Part Numbers' },
+  //   ],
+  // },
 ];
 
 const TreeItemRoot = styled('li')(({ theme }) => ({
@@ -207,27 +224,6 @@ const TreeItemContent = styled('div')(({ theme }) => ({
     }),
   },
 }));
-
-const getIconFromFileType = (fileType: FileType) => {
-  switch (fileType) {
-    case 'image':
-      return ImageIcon;
-    case 'pdf':
-      return PictureAsPdfIcon;
-    case 'doc':
-      return ArticleIcon;
-    case 'video':
-      return VideoCameraBackIcon;
-    case 'folder':
-      return FolderRounded;
-    case 'pinned':
-      return FolderOpenIcon;
-    case 'trash':
-      return DeleteIcon;
-    default:
-      return ArticleIcon;
-  }
-};
 
 const CustomCollapse = styled(Collapse)({
   padding: 0,
@@ -380,7 +376,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </nav>
           <Toolbar />
           <Box sx={{ width: '100vw', display: 'flex', flexDirection: 'row' }} component="main">
-            <Box sx={{ width: '20vw', p: 1, display: 'flex', overflowY: 'auto', overflowX: 'hidden' }}>
+            <Box sx={{ width: '20vw', p: 1, display: 'flex', overflowY: 'auto', height: '90vh', overflowX: 'hidden' }}>
               <RichTreeView
                 sx={{ height: '100%', width: '100%' }}
                 items={treeList}
