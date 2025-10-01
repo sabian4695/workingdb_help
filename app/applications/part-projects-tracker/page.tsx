@@ -10,7 +10,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Grow from '@mui/material/Grow';
 
 export default function App() {
-    const helpText = helpContent.filter(x => x.pageId === 'applications').filter(y => y.sections[0].sectionId === 'part-projects-tracker')
+    const helpText = helpContent.filter(x => x.pageId === 'part-projects-tracker')
     return (
         <>
             <Stack sx={{ width: '100%' }}>
