@@ -16,6 +16,7 @@ interface sectionContent {
 }
 
 interface helpPage {
+    route: string,
     pageId: string;
     pageName: string;
     sections: sectionContent[]
@@ -23,6 +24,7 @@ interface helpPage {
 
 export const helpContent: helpPage[] = [
     {
+        route: 'getting-started',
         pageId: "getting-started",
         pageName: "Getting Started",
         sections: [
@@ -137,6 +139,7 @@ export const helpContent: helpPage[] = [
         ]
     },
     {
+        route: 'searching',
         pageId: 'searching',
         pageName: 'Searching',
         sections: [
@@ -144,22 +147,23 @@ export const helpContent: helpPage[] = [
                 sectionId: "searching",
                 sectionTitle: "Search",
                 cards: {
-                    title: "Purpose & History",
+                    title: "Search",
                     contents: [
                         {
                             color: 'text.primary',
                             variant: 'body1',
-                            text: "test1"
+                            text: "There are many types of searching in WorkingDB. You can search by Part Number, Quote Number, File Name, Location, etc."
                         },
                         {
                             color: 'text.primary',
                             variant: 'body1',
-                            text: "test2"
+                            text: "WorkingDB is connected to live Oracle data, and there are search tools that have some slightly different features than the Oracle Java app." +
+                                'Some of the pages let you filter easier, some work faster, they search all Orgs at once, and you don\'t have to sign into Oracle'
                         },
                         {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test3"
+                            color: 'text.secondary',
+                            variant: 'subtitle1',
+                            text: "NOTE: Oracle functionality does NOT work outside of the virtual desktops."
                         }
                     ]
                 }
@@ -167,6 +171,7 @@ export const helpContent: helpPage[] = [
         ]
     },
     {
+        route: 'searching/general-search-layout',
         pageId: "general-search-layout",
         pageName: "Part Search Overview",
         sections: [
@@ -293,6 +298,7 @@ export const helpContent: helpPage[] = [
         ]
     },
     {
+        route: 'searching/oracle',
         pageId: "oracle",
         pageName: "Oracle Search",
         sections: [
@@ -635,6 +641,7 @@ export const helpContent: helpPage[] = [
         ]
     },
     {
+        route: 'searching/other-search',
         pageId: 'other-search',
         pageName: 'Other Reports',
         sections: [
@@ -713,6 +720,7 @@ export const helpContent: helpPage[] = [
         ]
     },
     {
+        route: 'applications',
         pageId: "applications",
         pageName: "Applications",
         sections: [

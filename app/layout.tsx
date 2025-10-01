@@ -44,6 +44,10 @@ import { useTreeItemModel } from '@mui/x-tree-view/hooks';
 import { TransitionProps } from '@mui/material/transitions';
 import { useSpring, animated } from '@react-spring/web';
 import Collapse from '@mui/material/Collapse';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import Drawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 
 import HomeIcon from '@mui/icons-material/Home';
 
@@ -62,6 +66,31 @@ const theme = createTheme({
     },
   }
 })
+
+const drawerWidth = 250;
+
+const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
+  open?: boolean;
+}>(({ theme }) => ({
+  flexGrow: 1,
+  transition: theme.transitions.create('margin', {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  marginLeft: `-${drawerWidth}px`,
+  variants: [
+    {
+      props: ({ open }) => open,
+      style: {
+        transition: theme.transitions.create('margin', {
+          easing: theme.transitions.easing.easeOut,
+          duration: theme.transitions.duration.enteringScreen,
+        }),
+        marginLeft: 0,
+      },
+    },
+  ],
+}));
 
 type FileType = 'image' | 'pdf' | 'doc' | 'video' | 'folder' | 'pinned' | 'trash' | 'home';
 
@@ -309,6 +338,13 @@ const CustomTreeItem = React.forwardRef(function CustomTreeItem(
 export default function Layout({ children }: { children: React.ReactNode }) {
   const router: any = useRouter()
   const pathName: any = usePathname()
+  const largerScreen = useMediaQuery(theme.breakpoints.up('md'));
+
+  const [openDrawer, setOpenDrawer] = React.useState(largerScreen);
+
+  const toggleDrawer = () => {
+    setOpenDrawer(!openDrawer);
+  };
 
   const handleItemSelectionToggle = (event: any, itemId: string) => {
     if (pathName !== '/' + itemId) {
@@ -323,9 +359,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const handleClose = () => {
     setOpen(false);
   };
-  const handleSearchClick = (itemId: string) => {
+  const handleSearchClick = (route: string) => {
     setOpen(false);
-    router.push('/' + itemId)
+    router.push('/' + route)
   };
   function setText(event: any) {
     setSearchText(event.target.value)
@@ -349,9 +385,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <nav>
-            <AppBar component="nav" elevation={5} variant='outlined'>
+            <AppBar component="nav" elevation={5} variant='outlined' sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
               <Toolbar variant='dense'>
-                <Box sx={{ display: 'flex', flexGrow: 1 }}>
+                <Box sx={{ display: 'flex', flexGrow: 1, alignItems: 'center' }}>
+                  <IconButton
+                    color="inherit"
+                    onClick={toggleDrawer}
+                    edge="start"
+                    sx={{ mr: 2 }}
+                  >
+                    <MenuIcon />
+                  </IconButton>
                   <Image
                     height='30'
                     width='30'
@@ -375,21 +419,42 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </AppBar>
           </nav>
           <Toolbar />
-          <Box sx={{ width: '100vw', display: 'flex', flexDirection: 'row' }} component="main">
-            <Box sx={{ width: '20vw', p: 1, display: 'flex', overflowY: 'auto', height: '90vh', overflowX: 'hidden' }}>
-              <RichTreeView
-                sx={{ height: '100%', width: '100%' }}
-                items={treeList}
-                onItemClick={handleItemSelectionToggle}
-                isItemDisabled={isItemDisabled}
-                slots={{ item: CustomTreeItem }}
-                itemChildrenIndentation={24}
-              />
-            </Box>
-            <Divider orientation="vertical" variant="middle" flexItem />
-            <Box sx={{ alignItems: 'top', flexGrow: 1, textAlign: 'center', maxWidth: '80vw', height: '90vh', display: 'flex', overflowY: 'auto', overflowX: 'hidden' }}>
+          <Box component="main" sx={{ width: '100vw', display: 'flex' }}>
+            <Drawer
+              sx={{
+                width: drawerWidth,
+                flexShrink: 0,
+                '& .MuiDrawer-paper': {
+                  width: drawerWidth,
+                },
+              }}
+              variant="persistent"
+              anchor="left"
+              open={openDrawer}
+            >
+              <Toolbar />
+              <Box>
+                <RichTreeView
+                  sx={{ height: '100%', width: '100%' }}
+                  items={treeList}
+                  onItemClick={handleItemSelectionToggle}
+                  isItemDisabled={isItemDisabled}
+                  slots={{ item: CustomTreeItem }}
+                  itemChildrenIndentation={24}
+                />
+              </Box>
+            </Drawer>
+            <Main open={openDrawer} sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'top',
+              textAlign: 'center',
+              overflowY: 'auto',
+              overflowX: 'hidden',
+            }}
+            >
               {children}
-            </Box>
+            </Main>
           </Box>
           <Dialog
             open={open}
@@ -418,13 +483,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 />
                 <List dense sx={{ width: '100%', bgcolor: 'background.paper' }}>
                   {filterResults.map(x => (
-                    <ListItemButton onClick={() => handleSearchClick(x.pageId)} key={x.pageId}>
-                      <ListItemText primary={x.pageName} secondary={x.sections[0].sectionTitle} />
+                    <ListItemButton onClick={() => handleSearchClick(x.route)} key={x.pageId}>
+                      <ListItemText primary={x.pageName} />
+                      {/* <ListItemText primary={x.pageName} secondary={x.sections[0].sectionTitle} /> */}
                     </ListItemButton>
                   ))}
                 </List>
               </Stack>
-
             </DialogContent>
             <DialogActions>
               <Button onClick={handleClose}>Close</Button>
@@ -432,7 +497,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Dialog>
         </ThemeProvider>
       </body>
-
     </html >
   );
 }
