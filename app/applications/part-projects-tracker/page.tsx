@@ -13,7 +13,7 @@ export default function App() {
     const helpText = helpContent.filter(x => x.pageId === 'applications').filter(y => y.sections[0].sectionId === 'part-projects-tracker')
     return (
         <>
-            <Stack>
+            <Stack sx={{ width: '100%' }}>
                 {helpText[0].sections.map(row => (
                     <Box key={row.sectionId}>
                         <Divider variant="middle" flexItem sx={{ m: 5 }} />

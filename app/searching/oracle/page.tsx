@@ -14,25 +14,7 @@ export default function App() {
     const helpText = helpContent.filter(x => x.pageId === 'oracle')
     return (
         <>
-            <Stack>
-                <Grow in={true}>
-                    <Box sx={{ p: 10 }}>
-                        <Image
-                            height='250'
-                            width='250'
-                            src='/images/logo.png'
-                            alt='logo'
-                            loading="lazy"
-                        />
-                        <Typography
-                            sx={{ fontWeight: '100', letterSpacing: 7 }}
-                            variant={'h3'}
-                            color='text.secondary'
-                        >
-                            WorkingDB
-                        </Typography>
-                    </Box>
-                </Grow>
+            <Stack sx={{ width: '100%' }}>
                 {helpText[0].sections.map(row => (
                     <Box key={row.sectionId}>
                         <Divider variant="middle" flexItem sx={{ m: 5 }} />
@@ -64,7 +46,7 @@ export default function App() {
                         </Grow>
                     </Box>
                 ))}
-            </Stack>
+            </Stack >
         </>
     );
 }

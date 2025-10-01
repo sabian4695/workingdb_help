@@ -13,7 +13,7 @@ export default function App() {
     const helpText = helpContent.filter(x => x.pageId === 'applications')
     return (
         <>
-            <Stack>
+            <Stack sx={{ width: '100%' }}>
                 {helpText[0].sections.map(row => (
                     <Box key={row.sectionId}>
                         <Divider variant="middle" flexItem sx={{ m: 5 }} />

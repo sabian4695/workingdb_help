@@ -369,30 +369,6 @@ export const helpContent: helpPage[] = [
                 }
             },
             {
-                sectionId: "item-categories",
-                sectionTitle: "Item Categories",
-                cards: {
-                    title: "Purpose & History",
-                    contents: [
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test1"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test2"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test3"
-                        }
-                    ]
-                }
-            },
-            {
                 sectionId: "customer-item-xref",
                 sectionTitle: "Customer Item Cross Reference",
                 cards: {
