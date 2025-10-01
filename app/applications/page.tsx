@@ -17,12 +17,12 @@ export default function App() {
                 {helpText[0].sections.map(row => (
                     <Box key={row.sectionId}>
                         <Divider variant="middle" flexItem sx={{ m: 5 }} />
-                        <Grow in={true} style={{ transitionDelay: '200ms' }}>
+                        <Grow in={true>
                             <Typography id={row.sectionId} variant="h3">
                                 {row.sectionTitle}
                             </Typography>
                         </Grow>
-                        <Grow in={true} style={{ transitionDelay: '500ms' }}>
+                        <Grow in={true}>
                             <Paper elevation={3} sx={{ borderRadius: '10px', p: 3, m: 5 }}>
                                 <Stack spacing={3}>
                                     <Typography variant="h5" color='text.secondary'>{row.cards.title}</Typography>
