@@ -131,7 +131,7 @@ export const helpContent: helpPage[] = [
                             color: 'text.primary',
                             variant: 'body1',
                             text: "Here\'s the general layout of the front page.",
-                            image: '/images/gettingstarted/layout.png'
+                            image: '/images/getting-started/layout.png'
                         }
                     ]
                 }
@@ -179,17 +179,18 @@ export const helpContent: helpPage[] = [
                 sectionId: "general-search-layout",
                 sectionTitle: "General Search Layout",
                 cards: {
-                    title: "Purpose & History",
+                    title: "Primary Search Area",
                     contents: [
                         {
                             color: 'text.primary',
                             variant: 'body1',
-                            text: "test1"
+                            text: "Here\'s what you see when you first open WorkingDB:",
+                            image: '/images/general-search-layout/search_layout_empty.png'
                         },
                         {
                             color: 'text.primary',
                             variant: 'body1',
-                            text: "test2"
+                            text: "An empty, yellow, search bar with a bunch of buttons. Here\'s a quick description of some of the buttons:"
                         },
                         {
                             color: 'text.primary',
