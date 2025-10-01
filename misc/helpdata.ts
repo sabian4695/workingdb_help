@@ -774,5 +774,115 @@ export const helpContent: helpPage[] = [
                 }
             },
         ]
+    },
+    {
+        route: 'applications/part-projects-tracker',
+        pageId: "part-projects-tracker",
+        pageName: "Part Projects Trackers",
+        sections: [
+            {
+                sectionId: "part-projects-tracker",
+                sectionTitle: "Part Projects Traker",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "part-projects-sub-apps",
+                sectionTitle: "Part Projects Traker",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+        ]
+    },
+    {
+        route: 'applications/part-projects-sub-apps',
+        pageId: "part-projects-sub-apps",
+        pageName: "Part Projects Sub-Apps",
+        sections: [
+            {
+                sectionId: "part-projects-tracker",
+                sectionTitle: "Part Projects Traker",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+            {
+                sectionId: "part-projects-sub-apps",
+                sectionTitle: "Part Projects Traker",
+                cards: {
+                    title: "Purpose & History",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }
+            },
+        ]
     }
 ]
