@@ -17,7 +17,7 @@ export default function App() {
                 {helpText[0].sections.map(row => (
                     <Box key={row.sectionId}>
                         <Divider variant="middle" flexItem sx={{ m: 5 }} />
-                        <Grow in={true>
+                        <Grow in={true}>
                             <Typography id={row.sectionId} variant="h3">
                                 {row.sectionTitle}
                             </Typography>
