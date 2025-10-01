@@ -40,9 +40,11 @@ export default function App() {
         </Grow>
         <Box>
           <Divider variant="middle" flexItem sx={{ m: 5 }} />
-          <Typography variant="h3">
-            Welcome to the WorkingDB Help Site
-          </Typography>
+          <Grow in={true}>
+            <Typography variant="h3">
+              Welcome to the WorkingDB Help Site
+            </Typography>
+          </Grow>
           <Grow in={true}>
             <Paper elevation={3} sx={{ borderRadius: '10px', p: 3, m: 5 }}>
               <Stack sx={{ alignItems: 'center', justifyContent: 'center' }} spacing={3}>
