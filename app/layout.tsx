@@ -142,8 +142,6 @@ const treeList: itemWithDis[] = [
     children: [
       { id: 'searching/general-search-layout', label: 'Part Search Overview', subHeader: "Part Search Overview" },
       { id: 'searching/general-search-layout#general-search-layout', label: 'General Search Layout' },
-      { id: 'searching/general-search-layout#org-specific-docs', label: 'Org Specific Documents' },
-      { id: 'searching/general-search-layout#quick-links', label: 'Quick Links' },
       { id: 'searching/general-search-layout#search-bar', label: 'File Search Bar' },
       { id: 'searching/general-search-layout#misc-items', label: 'Miscellaneous' },
 
