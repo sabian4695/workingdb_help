@@ -24,7 +24,7 @@ export default function App() {
                             </Typography>
                         </Grow>
                         {row.cards.map(y => (
-                            <Grow in={true}>
+                            <Grow key={y.title} in={true}>
                                 <Paper elevation={3} sx={{ borderRadius: '10px', p: 3, m: 5 }}>
                                     <Stack spacing={3}>
                                         <Typography variant="h5" color='text.secondary'>{row.cards[0].title}</Typography>
