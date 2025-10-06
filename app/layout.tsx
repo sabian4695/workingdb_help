@@ -220,7 +220,7 @@ const TreeItemContent = styled('div')(({ theme }) => ({
   '&[data-expanded]:not([data-focused], [data-selected]) .labelIcon': {
     color: theme.palette.primary.dark,
     ...theme.applyStyles('light', {
-      color: theme.palette.primary.main,
+      color: theme.palette.primary.dark,
     }),
     '&::before': {
       content: '""',
@@ -244,10 +244,10 @@ const TreeItemContent = styled('div')(({ theme }) => ({
     }),
   },
   '&:not([data-focused], [data-selected]):hover': {
-    backgroundColor: alpha(theme.palette.primary.main, 0.1),
+    backgroundColor: alpha(theme.palette.primary.dark, 0.1),
     color: 'white',
     ...theme.applyStyles('light', {
-      color: theme.palette.primary.main,
+      color: theme.palette.primary.dark,
     }),
   },
 }));
