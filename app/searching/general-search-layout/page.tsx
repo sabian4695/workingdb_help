@@ -14,7 +14,7 @@ export default function App() {
     const helpText = helpContent.filter(x => x.pageId === 'general-search-layout')
     return (
         <>
-            <Stack sx={{ width: '100%' }}>
+            <Stack>
                 {helpText[0].sections.map(row => (
                     <Box key={row.sectionId}>
                         <Divider variant="middle" flexItem sx={{ m: 5 }} />
@@ -27,7 +27,7 @@ export default function App() {
                             <Grow key={y.title} in={true}>
                                 <Paper elevation={3} sx={{ borderRadius: '10px', p: 3, m: 5 }}>
                                     <Stack spacing={3}>
-                                        <Typography variant="h5" color='text.secondary'>{row.cards[0].title}</Typography>
+                                        <Typography variant="h5" color='text.secondary'>{y.title}</Typography>
                                         {y.contents.map(x => (
                                             <Box key={x.text}>
                                                 <Typography color={x.color} variant={x.variant} >{x.text}</Typography>
