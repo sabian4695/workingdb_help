@@ -51,7 +51,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import HomeIcon from '@mui/icons-material/Home';
 
-export const primaryMain = '#5c8592ff'
+export const primaryMain = '#65bae0'
 export const secondaryMain = '#698679ff'
 export const primaryRGB = '103, 155, 172'
 

@@ -190,36 +190,60 @@ export const helpContent: helpPage[] = [
                         {
                             color: 'text.primary',
                             variant: 'body1',
-                            text: "An empty, yellow, search bar with a bunch of buttons. Here\'s a quick description of some of the buttons:"
+                            text: "An empty, yellow, search bar with a bunch of buttons. Here\'s a quick description of some of the buttons:",
+                            image: "/images/general-search-layout/search_layout_marked.png"
                         },
                         {
                             color: 'text.primary',
                             variant: 'body1',
-                            text: "test3"
-                        }
+                            text: "Each of these buttons links to a folder or area related to the part number that you search in the search bar. " +
+                                "If you leave the search bar empty and click on a link, it will open the primary folder of that area. "
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "Here is an example of what it looks like when you search a part number.",
+                            image: "/images/general-search-layout/search_layout_filled.png"
+                        },
+                        {
+                            color: 'text.secondary',
+                            variant: 'subtitle2',
+                            text: "A few things happen when you click search:" +
+                                
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "WorkingDB searches Oracle for your part, and loads some basic part information from there. " +
+                                "It then loads the picture of the part on the right if it can find one. " + 
+                                "Lastly, it looks like any folders it can to find which folders already exist for this part number. " +
+                                "If it finds a folder, it outlines the button in a dotted-green line. " + 
+                                "Oh, and it does the same on the \'Dash\' button if it finds a part project."
+                        },
                     ]
-                }
+                },
             },
             {
                 sectionId: "org-specific-docs",
                 sectionTitle: "Org Specific Documents",
                 cards: {
-                    title: "Purpose & History",
+                    title: "Tabs for Common Org-Specific Docs",
                     contents: [
                         {
                             color: 'text.primary',
                             variant: 'body1',
-                            text: "test1"
+                            text: "Simply enough, there are some documents that are commonly accessed for each org.",
+                            image: "/images/general-search-layout/search_layout_org_specific.png"
                         },
                         {
                             color: 'text.primary',
                             variant: 'body1',
-                            text: "test2"
+                            text: "There are three tabs. One for CNL, SLB, and LVG. If needs arise, more can be added for CUU and NCM."
                         },
                         {
                             color: 'text.primary',
                             variant: 'body1',
-                            text: "test3"
+                            text: "\'Master Setups\' is the same exact button for all orgs, since they all live together on SharePoint."
                         }
                     ]
                 }
@@ -228,22 +252,18 @@ export const helpContent: helpPage[] = [
                 sectionId: "quick-links",
                 sectionTitle: "Quick Links",
                 cards: {
-                    title: "Purpose & History",
+                    title: "Quick Link Buttons",
                     contents: [
                         {
                             color: 'text.primary',
                             variant: 'body1',
-                            text: "test1"
+                            text: "There\s a little column of extra quick-links on the side, too. " +
+                                "These are reports that are found elsewhere, but very commonly used, so we put them here."
                         },
                         {
-                            color: 'text.primary',
+                            color: 'text.secondary',
                             variant: 'body1',
-                            text: "test2"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test3"
+                            text: "P.S. We run analytics on all search data, and this is how we found that these were the most used reports."
                         }
                     ]
                 }
