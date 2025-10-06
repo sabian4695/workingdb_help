@@ -240,7 +240,7 @@ const TreeItemContent = styled('div')(({ theme }) => ({
     backgroundColor: theme.palette.primary.dark,
     color: theme.palette.primary.contrastText,
     ...theme.applyStyles('dark', {
-      backgroundColor: alpha(theme.palette.primary.main, 0.9),
+      backgroundColor: alpha(theme.palette.primary.dark, 0.6),
     }),
   },
   '&:not([data-focused], [data-selected]):hover': {
