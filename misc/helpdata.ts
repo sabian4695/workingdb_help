@@ -182,7 +182,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "general-search-layout",
                 sectionTitle: "General Search Layout",
                 cards: [{
-                    title: "Primary Search Area",
+                    title: "Primary Part Number Searching",
                     contents: [
                         {
                             color: 'text.primary',
@@ -212,8 +212,12 @@ export const helpContent: helpPage[] = [
                             variant: 'body1',
                             text: "WorkingDB searches Oracle for your part, and loads some basic part information from there. " +
                                 "It then loads the picture of the part on the right if it can find one. " +
-                                "Lastly, it looks like any folders it can to find which folders already exist for this part number. " +
-                                "If it finds a folder, it outlines the button in a dotted-green line. " +
+                                "Lastly, it looks through any folders it can to find which ones exist for this part number. "
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "If it finds a folder, it outlines the button in a dotted-green line. " +
                                 "Oh, and it does the same on the \'Dash\' button if it finds a part project.",
                             image: "/images/general-search-layout/search_layout_filled.png"
                         }
@@ -260,10 +264,30 @@ export const helpContent: helpPage[] = [
                 ]
             },
             {
-                sectionId: "search-bar",
-                sectionTitle: "File Search Bar",
+                sectionId: "search-links",
+                sectionTitle: "Search Links Bar + Favorites",
                 cards: [{
                     title: "Search Bar",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "Type in this search bar to dynamically search through all the links stored in WorkingDB."
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "The links are sorted by popularity (most clicked at the top)"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "Click the \'Star\' next to a link to \'Favorite\' that link."
+                        }
+                    ]
+                },
+                {
+                    title: "Favorites",
                     contents: [
                         {
                             color: 'text.primary',
@@ -281,7 +305,8 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }]
+                }
+                ]
             },
             {
                 sectionId: "misc-items",
