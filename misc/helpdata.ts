@@ -128,7 +128,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "basic-layout",
                 sectionTitle: "Basic Layout",
                 cards: [{
-                    title: "Typical Method",
+                    title: "It\s Basic.",
                     contents: [
                         {
                             color: 'text.primary',
@@ -223,7 +223,29 @@ export const helpContent: helpPage[] = [
                                 "Oh, and it does the same on the \'Dash\' button if it finds a part project."
                         },
                     ]
-                }]
+                },
+                {
+                    title: "Tabs for Common Org-Specific Docs",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "Simply enough, there are some documents that are commonly accessed for each org.",
+                            image: "/images/general-search-layout/search_layout_org_specific.png"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "There are three tabs. One for CNL, SLB, and LVG. If needs arise, more can be added for CUU and NCM."
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "\'Master Setups\' is the same exact button for all orgs, since they all live together on SharePoint."
+                        }
+                    ]
+                }
+            ]
             },
             {
                 sectionId: "org-specific-docs",
