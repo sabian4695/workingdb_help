@@ -195,7 +195,7 @@ const TreeItemRoot = styled('li')(({ theme }) => ({
   padding: 0,
   outline: 0,
   color: theme.palette.grey[400],
-  ...theme.applyStyles('light', {
+  ...theme.applyStyles('dark', {
     color: theme.palette.grey[800],
   }),
 }));
@@ -219,7 +219,7 @@ const TreeItemContent = styled('div')(({ theme }) => ({
   fontWeight: 500,
   '&[data-expanded]:not([data-focused], [data-selected]) .labelIcon': {
     color: theme.palette.primary.dark,
-    ...theme.applyStyles('light', {
+    ...theme.applyStyles('dark', {
       color: theme.palette.primary.dark,
     }),
     '&::before': {
@@ -231,7 +231,7 @@ const TreeItemContent = styled('div')(({ theme }) => ({
       height: 'calc(100% - 48px)',
       width: '1.5px',
       backgroundColor: theme.palette.grey[700],
-      ...theme.applyStyles('light', {
+      ...theme.applyStyles('dark', {
         backgroundColor: theme.palette.grey[300],
       }),
     },
@@ -239,14 +239,14 @@ const TreeItemContent = styled('div')(({ theme }) => ({
   [`&[data-focused], &[data-selected]`]: {
     backgroundColor: theme.palette.primary.dark,
     color: theme.palette.primary.contrastText,
-    ...theme.applyStyles('light', {
+    ...theme.applyStyles('dark', {
       backgroundColor: theme.palette.secondary.main,
     }),
   },
   '&:not([data-focused], [data-selected]):hover': {
     backgroundColor: alpha(theme.palette.primary.dark, 0.1),
     color: 'white',
-    ...theme.applyStyles('light', {
+    ...theme.applyStyles('dark', {
       color: theme.palette.primary.dark,
     }),
   },
