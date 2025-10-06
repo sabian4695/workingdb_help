@@ -25,8 +25,8 @@ export default function App() {
                         <Grow in={true}>
                             <Paper elevation={3} sx={{ borderRadius: '10px', p: 3, m: 5 }}>
                                 <Stack spacing={3}>
-                                    <Typography variant="h5" color='text.secondary'>{row.cards.title}</Typography>
-                                    {row.cards.contents.map(x => (
+                                    <Typography variant="h5" color='text.secondary'>{row.cards[0].title}</Typography>
+                                    {row.cards[0].contents.map(x => (
                                         <Box key={x.text}>
                                             <Typography color={x.color} variant={x.variant} >{x.text}</Typography>
                                             {x.image !== undefined ?

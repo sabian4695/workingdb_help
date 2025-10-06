@@ -6,13 +6,16 @@ interface itemContent {
     text: string,
     image?: string
 }
+
+interface itemCard {
+    title: string,
+    contents: itemContent[]
+}
+
 interface sectionContent {
     sectionId: string,
     sectionTitle: string,
-    cards: {
-        title: string,
-        contents: itemContent[]
-    }
+    cards: itemCard[]
 }
 
 interface helpPage {
@@ -31,7 +34,7 @@ export const helpContent: helpPage[] = [
             {
                 sectionId: "what-is-workingdb",
                 sectionTitle: "What is WorkingDB?",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -55,12 +58,12 @@ export const helpContent: helpPage[] = [
                                 "Or at the very least, look up information."
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "getting-access",
                 sectionTitle: "Getting Access",
-                cards: {
+                cards: [{
                     title: "Typical Method",
                     contents: [
                         {
@@ -85,12 +88,12 @@ export const helpContent: helpPage[] = [
                             text: 'You&apos;ll need to copy and paste that link into file explorer.'
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "first-open",
                 sectionTitle: "First Time Opening WorkingDB",
-                cards: {
+                cards: [{
                     title: "Typical Method",
                     contents: [
                         {
@@ -119,12 +122,12 @@ export const helpContent: helpPage[] = [
                             text: "Click \'Yes\'. Trust me."
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "basic-layout",
                 sectionTitle: "Basic Layout",
-                cards: {
+                cards: [{
                     title: "Typical Method",
                     contents: [
                         {
@@ -134,7 +137,7 @@ export const helpContent: helpPage[] = [
                             image: '/images/getting-started/layout.png'
                         }
                     ]
-                }
+                }]
             }
         ]
     },
@@ -146,7 +149,7 @@ export const helpContent: helpPage[] = [
             {
                 sectionId: "searching",
                 sectionTitle: "Search",
-                cards: {
+                cards: [{
                     title: "Search",
                     contents: [
                         {
@@ -166,7 +169,7 @@ export const helpContent: helpPage[] = [
                             text: "NOTE: Oracle functionality does NOT work outside of the virtual desktops."
                         }
                     ]
-                }
+                }]
             },
         ]
     },
@@ -178,7 +181,7 @@ export const helpContent: helpPage[] = [
             {
                 sectionId: "general-search-layout",
                 sectionTitle: "General Search Layout",
-                cards: {
+                cards: [{
                     title: "Primary Search Area",
                     contents: [
                         {
@@ -220,12 +223,12 @@ export const helpContent: helpPage[] = [
                                 "Oh, and it does the same on the \'Dash\' button if it finds a part project."
                         },
                     ]
-                },
+                }]
             },
             {
                 sectionId: "org-specific-docs",
                 sectionTitle: "Org Specific Documents",
-                cards: {
+                cards: [{
                     title: "Tabs for Common Org-Specific Docs",
                     contents: [
                         {
@@ -245,12 +248,12 @@ export const helpContent: helpPage[] = [
                             text: "\'Master Setups\' is the same exact button for all orgs, since they all live together on SharePoint."
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "quick-links",
                 sectionTitle: "Quick Links",
-                cards: {
+                cards: [{
                     title: "Quick Link Buttons",
                     contents: [
                         {
@@ -265,12 +268,12 @@ export const helpContent: helpPage[] = [
                             text: "P.S. We run analytics on all search data, and this is how we found that these were the most used reports."
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "search-bar",
                 sectionTitle: "File Search Bar",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -289,12 +292,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "misc-items",
                 sectionTitle: "Miscellaneous",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -313,7 +316,7 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
         ]
     },
@@ -325,7 +328,7 @@ export const helpContent: helpPage[] = [
             {
                 sectionId: "ecos",
                 sectionTitle: "ECOs",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -344,12 +347,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "sifs",
                 sectionTitle: "SIFs (Sales Information Form)",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -368,12 +371,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "item-categories",
                 sectionTitle: "Item Categories",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -392,12 +395,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "customer-item-xref",
                 sectionTitle: "Customer Item Cross Reference",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -416,12 +419,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "on-hand-quantity",
                 sectionTitle: "On Hand Quantity",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -440,12 +443,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "bom",
                 sectionTitle: "BOM / Item Where Used",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -464,12 +467,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "forecast",
                 sectionTitle: "Forecast Orders",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -488,12 +491,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "open-orders",
                 sectionTitle: "Open Orders",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -512,12 +515,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "cost",
                 sectionTitle: "Cost",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -536,12 +539,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "pos",
                 sectionTitle: "POs",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -560,12 +563,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "material-search",
                 sectionTitle: "Material Search",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -584,12 +587,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "search-by-description",
                 sectionTitle: "Search By Description",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -608,12 +611,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "routing",
                 sectionTitle: "Tool -> Part Number Routing",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -632,12 +635,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "sif-item-report",
                 sectionTitle: "Part SIF Item Report",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -656,7 +659,7 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
         ]
     },
@@ -668,7 +671,7 @@ export const helpContent: helpPage[] = [
             {
                 sectionId: "cnl-lab-wos",
                 sectionTitle: "CNL Lab WOs",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -687,12 +690,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "slb-tooling-notes",
                 sectionTitle: "SLB Tooling DB Notes",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -711,12 +714,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "open-itrs",
                 sectionTitle: "Open ITRs",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -735,7 +738,7 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
         ]
     },
@@ -747,7 +750,7 @@ export const helpContent: helpPage[] = [
             {
                 sectionId: "part-projects-tracker",
                 sectionTitle: "Part Projects Traker",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -766,12 +769,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "part-projects-sub-apps",
                 sectionTitle: "Part Projects Traker",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -790,7 +793,7 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
         ]
     },
@@ -802,7 +805,7 @@ export const helpContent: helpPage[] = [
             {
                 sectionId: "part-projects-tracker",
                 sectionTitle: "Part Projects Traker",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -821,12 +824,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "part-projects-sub-apps",
                 sectionTitle: "Part Projects Traker",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -845,7 +848,7 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
         ]
     },
@@ -857,7 +860,7 @@ export const helpContent: helpPage[] = [
             {
                 sectionId: "part-projects-tracker",
                 sectionTitle: "Part Projects Traker",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -876,12 +879,12 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
             {
                 sectionId: "part-projects-sub-apps",
                 sectionTitle: "Part Projects Traker",
-                cards: {
+                cards: [{
                     title: "Purpose & History",
                     contents: [
                         {
@@ -900,7 +903,7 @@ export const helpContent: helpPage[] = [
                             text: "test3"
                         }
                     ]
-                }
+                }]
             },
         ]
     }
