@@ -208,8 +208,7 @@ export const helpContent: helpPage[] = [
                         {
                             color: 'text.secondary',
                             variant: 'subtitle2',
-                            text: "A few things happen when you click search:" +
-                                
+                            text: "A few things happen when you click search:"
                         },
                         {
                             color: 'text.primary',
