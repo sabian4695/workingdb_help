@@ -142,8 +142,6 @@ const treeList: itemWithDis[] = [
     children: [
       { id: 'searching/general-search-layout', label: 'Part Search Overview', subHeader: "Part Search Overview" },
       { id: 'searching/general-search-layout#general-search-layout', label: 'General Search Layout' },
-      { id: 'searching/general-search-layout#org-specific-docs', label: 'Org Specific Documents' },
-      { id: 'searching/general-search-layout#quick-links', label: 'Quick Links' },
       { id: 'searching/general-search-layout#search-bar', label: 'File Search Bar' },
       { id: 'searching/general-search-layout#misc-items', label: 'Miscellaneous' },
 
@@ -197,7 +195,7 @@ const TreeItemRoot = styled('li')(({ theme }) => ({
   padding: 0,
   outline: 0,
   color: theme.palette.grey[400],
-  ...theme.applyStyles('light', {
+  ...theme.applyStyles('dark', {
     color: theme.palette.grey[800],
   }),
 }));
@@ -221,8 +219,8 @@ const TreeItemContent = styled('div')(({ theme }) => ({
   fontWeight: 500,
   '&[data-expanded]:not([data-focused], [data-selected]) .labelIcon': {
     color: theme.palette.primary.dark,
-    ...theme.applyStyles('light', {
-      color: theme.palette.primary.main,
+    ...theme.applyStyles('dark', {
+      color: theme.palette.primary.dark,
     }),
     '&::before': {
       content: '""',
@@ -233,7 +231,7 @@ const TreeItemContent = styled('div')(({ theme }) => ({
       height: 'calc(100% - 48px)',
       width: '1.5px',
       backgroundColor: theme.palette.grey[700],
-      ...theme.applyStyles('light', {
+      ...theme.applyStyles('dark', {
         backgroundColor: theme.palette.grey[300],
       }),
     },
@@ -241,14 +239,14 @@ const TreeItemContent = styled('div')(({ theme }) => ({
   [`&[data-focused], &[data-selected]`]: {
     backgroundColor: theme.palette.primary.dark,
     color: theme.palette.primary.contrastText,
-    ...theme.applyStyles('light', {
-      backgroundColor: theme.palette.primary.main,
+    ...theme.applyStyles('dark', {
+      backgroundColor: alpha(theme.palette.primary.dark, 0.6),
     }),
   },
   '&:not([data-focused], [data-selected]):hover': {
     backgroundColor: alpha(theme.palette.primary.main, 0.1),
     color: 'white',
-    ...theme.applyStyles('light', {
+    ...theme.applyStyles('dark', {
       color: theme.palette.primary.main,
     }),
   },
@@ -323,7 +321,7 @@ const CustomTreeItem = React.forwardRef(function CustomTreeItem(
                 />
               )}
               {'subHeader' in item ?
-                <Typography color="secondary" variant='overline'>{item.subHeader}</Typography>
+                <Typography color="secondary.light" variant='overline'>{item.subHeader}</Typography>
                 : <Typography color="textPrimary">{label}</Typography>}
               {status.expandable && status.expanded}
             </TreeItemLabel>

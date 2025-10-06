@@ -202,26 +202,21 @@ export const helpContent: helpPage[] = [
                             text: "Each of these buttons links to a folder or area related to the part number that you search in the search bar. " +
                                 "If you leave the search bar empty and click on a link, it will open the primary folder of that area. "
                         },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "Here is an example of what it looks like when you search a part number.",
-                            image: "/images/general-search-layout/search_layout_filled.png"
-                        },
-                        {
-                            color: 'text.secondary',
-                            variant: 'subtitle2',
-                            text: "A few things happen when you click search:"
-                        },
+                    ]
+                },
+                {
+                    title: "A few things happen when you click search:",
+                    contents: [
                         {
                             color: 'text.primary',
                             variant: 'body1',
                             text: "WorkingDB searches Oracle for your part, and loads some basic part information from there. " +
-                                "It then loads the picture of the part on the right if it can find one. " + 
+                                "It then loads the picture of the part on the right if it can find one. " +
                                 "Lastly, it looks like any folders it can to find which folders already exist for this part number. " +
-                                "If it finds a folder, it outlines the button in a dotted-green line. " + 
-                                "Oh, and it does the same on the \'Dash\' button if it finds a part project."
-                        },
+                                "If it finds a folder, it outlines the button in a dotted-green line. " +
+                                "Oh, and it does the same on the \'Dash\' button if it finds a part project.",
+                            image: "/images/general-search-layout/search_layout_filled.png"
+                        }
                     ]
                 },
                 {
@@ -244,45 +239,16 @@ export const helpContent: helpPage[] = [
                             text: "\'Master Setups\' is the same exact button for all orgs, since they all live together on SharePoint."
                         }
                     ]
-                }
-            ]
-            },
-            {
-                sectionId: "org-specific-docs",
-                sectionTitle: "Org Specific Documents",
-                cards: [{
-                    title: "Tabs for Common Org-Specific Docs",
-                    contents: [
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "Simply enough, there are some documents that are commonly accessed for each org.",
-                            image: "/images/general-search-layout/search_layout_org_specific.png"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "There are three tabs. One for CNL, SLB, and LVG. If needs arise, more can be added for CUU and NCM."
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "\'Master Setups\' is the same exact button for all orgs, since they all live together on SharePoint."
-                        }
-                    ]
-                }]
-            },
-            {
-                sectionId: "quick-links",
-                sectionTitle: "Quick Links",
-                cards: [{
+                },
+                {
                     title: "Quick Link Buttons",
                     contents: [
                         {
                             color: 'text.primary',
                             variant: 'body1',
                             text: "There\s a little column of extra quick-links on the side, too. " +
-                                "These are reports that are found elsewhere, but very commonly used, so we put them here."
+                                "These are reports that are found elsewhere, but very commonly used, so we put them here.",
+                            image: "/images/general-search-layout/search_layout_quick_links.png"
                         },
                         {
                             color: 'text.secondary',
@@ -290,13 +256,14 @@ export const helpContent: helpPage[] = [
                             text: "P.S. We run analytics on all search data, and this is how we found that these were the most used reports."
                         }
                     ]
-                }]
+                }
+                ]
             },
             {
                 sectionId: "search-bar",
                 sectionTitle: "File Search Bar",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "Search Bar",
                     contents: [
                         {
                             color: 'text.primary',
@@ -320,7 +287,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "misc-items",
                 sectionTitle: "Miscellaneous",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "Other",
                     contents: [
                         {
                             color: 'text.primary',
@@ -351,7 +318,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "ecos",
                 sectionTitle: "ECOs",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "ECOs",
                     contents: [
                         {
                             color: 'text.primary',
@@ -375,7 +342,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "sifs",
                 sectionTitle: "SIFs (Sales Information Form)",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "SIFs",
                     contents: [
                         {
                             color: 'text.primary',
@@ -399,7 +366,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "item-categories",
                 sectionTitle: "Item Categories",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "Item Categories",
                     contents: [
                         {
                             color: 'text.primary',
@@ -423,7 +390,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "customer-item-xref",
                 sectionTitle: "Customer Item Cross Reference",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "Customer Item Cross Reference",
                     contents: [
                         {
                             color: 'text.primary',
@@ -447,7 +414,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "on-hand-quantity",
                 sectionTitle: "On Hand Quantity",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "On Hand Quantity",
                     contents: [
                         {
                             color: 'text.primary',
@@ -471,7 +438,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "bom",
                 sectionTitle: "BOM / Item Where Used",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "BOM / Item Where Used",
                     contents: [
                         {
                             color: 'text.primary',
@@ -495,7 +462,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "forecast",
                 sectionTitle: "Forecast Orders",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "Forecast Orders",
                     contents: [
                         {
                             color: 'text.primary',
@@ -519,7 +486,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "open-orders",
                 sectionTitle: "Open Orders",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "Open Orders",
                     contents: [
                         {
                             color: 'text.primary',
@@ -543,7 +510,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "cost",
                 sectionTitle: "Cost",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "Cost Search",
                     contents: [
                         {
                             color: 'text.primary',
@@ -567,7 +534,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "pos",
                 sectionTitle: "POs",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "Puchase Order Search",
                     contents: [
                         {
                             color: 'text.primary',
@@ -591,7 +558,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "material-search",
                 sectionTitle: "Material Search",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "Material Search",
                     contents: [
                         {
                             color: 'text.primary',
@@ -615,7 +582,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "search-by-description",
                 sectionTitle: "Search By Description",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "Search By Description",
                     contents: [
                         {
                             color: 'text.primary',
@@ -639,7 +606,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "routing",
                 sectionTitle: "Tool -> Part Number Routing",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "Tool -> Part Number Routing",
                     contents: [
                         {
                             color: 'text.primary',
@@ -663,7 +630,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "sif-item-report",
                 sectionTitle: "Part SIF Item Report",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "Part SIF Item Report",
                     contents: [
                         {
                             color: 'text.primary',
@@ -694,7 +661,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "cnl-lab-wos",
                 sectionTitle: "CNL Lab WOs",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "CNL Lab WOs",
                     contents: [
                         {
                             color: 'text.primary',
@@ -718,7 +685,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "slb-tooling-notes",
                 sectionTitle: "SLB Tooling DB Notes",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "SLB Tooling DB Notes",
                     contents: [
                         {
                             color: 'text.primary',
@@ -742,7 +709,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "open-itrs",
                 sectionTitle: "Open ITRs",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "Open ITRs",
                     contents: [
                         {
                             color: 'text.primary',
@@ -753,11 +720,6 @@ export const helpContent: helpPage[] = [
                             color: 'text.primary',
                             variant: 'body1',
                             text: "test2"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test3"
                         }
                     ]
                 }]
@@ -771,7 +733,7 @@ export const helpContent: helpPage[] = [
         sections: [
             {
                 sectionId: "part-projects-tracker",
-                sectionTitle: "Part Projects Traker",
+                sectionTitle: "Part Projects Tracker",
                 cards: [{
                     title: "Purpose & History",
                     contents: [
@@ -784,18 +746,13 @@ export const helpContent: helpPage[] = [
                             color: 'text.primary',
                             variant: 'body1',
                             text: "test2"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test3"
                         }
                     ]
                 }]
             },
             {
                 sectionId: "part-projects-sub-apps",
-                sectionTitle: "Part Projects Traker",
+                sectionTitle: "Part Projects Tracker",
                 cards: [{
                     title: "Purpose & History",
                     contents: [
@@ -808,11 +765,6 @@ export const helpContent: helpPage[] = [
                             color: 'text.primary',
                             variant: 'body1',
                             text: "test2"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test3"
                         }
                     ]
                 }]
@@ -826,7 +778,7 @@ export const helpContent: helpPage[] = [
         sections: [
             {
                 sectionId: "part-projects-tracker",
-                sectionTitle: "Part Projects Traker",
+                sectionTitle: "Part Projects Tracker",
                 cards: [{
                     title: "Purpose & History",
                     contents: [
@@ -839,35 +791,6 @@ export const helpContent: helpPage[] = [
                             color: 'text.primary',
                             variant: 'body1',
                             text: "test2"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test3"
-                        }
-                    ]
-                }]
-            },
-            {
-                sectionId: "part-projects-sub-apps",
-                sectionTitle: "Part Projects Traker",
-                cards: [{
-                    title: "Purpose & History",
-                    contents: [
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test1"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test2"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test3"
                         }
                     ]
                 }]
@@ -880,34 +803,10 @@ export const helpContent: helpPage[] = [
         pageName: "Part Projects Sub-Apps",
         sections: [
             {
-                sectionId: "part-projects-tracker",
-                sectionTitle: "Part Projects Traker",
-                cards: [{
-                    title: "Purpose & History",
-                    contents: [
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test1"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test2"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test3"
-                        }
-                    ]
-                }]
-            },
-            {
                 sectionId: "part-projects-sub-apps",
-                sectionTitle: "Part Projects Traker",
+                sectionTitle: "Part Projects Sub Apps",
                 cards: [{
-                    title: "Purpose & History",
+                    title: "Part Projects Sub Apps",
                     contents: [
                         {
                             color: 'text.primary',
@@ -918,15 +817,10 @@ export const helpContent: helpPage[] = [
                             color: 'text.primary',
                             variant: 'body1',
                             text: "test2"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test3"
                         }
                     ]
                 }]
-            },
+            }
         ]
     }
 ]
