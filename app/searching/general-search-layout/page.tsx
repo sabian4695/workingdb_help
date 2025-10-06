@@ -16,7 +16,7 @@ export default function App() {
         <>
             <Stack sx={{ flexGrow: 0 }}>
                 {helpText[0].sections.map(row => (
-                    <Box key={row.sectionId}>
+                    <Box key={row.sectionId} sx={{ display: 'flex' }}>
                         <Divider variant="middle" flexItem sx={{ m: 5 }} />
                         <Grow in={true}>
                             <Typography id={row.sectionId} variant="h3">
@@ -25,7 +25,7 @@ export default function App() {
                         </Grow>
                         {row.cards.map(y => (
                             <Grow key={y.title} in={true}>
-                                <Paper elevation={3} sx={{ borderRadius: '10px', p: 3, m: 5 }}>
+                                <Paper elevation={3} sx={{ borderRadius: '10px', p: 3, m: 5, flexGrow: 0 }}>
                                     <Stack spacing={3}>
                                         <Typography variant="h5" color='text.secondary'>{y.title}</Typography>
                                         {y.contents.map(x => (
