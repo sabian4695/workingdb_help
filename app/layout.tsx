@@ -321,7 +321,7 @@ const CustomTreeItem = React.forwardRef(function CustomTreeItem(
                 />
               )}
               {'subHeader' in item ?
-                <Typography color="secondary" variant='overline'>{item.subHeader}</Typography>
+                <Typography color="secondary.light" variant='overline'>{item.subHeader}</Typography>
                 : <Typography color="textPrimary">{label}</Typography>}
               {status.expandable && status.expanded}
             </TreeItemLabel>
