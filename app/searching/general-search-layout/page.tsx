@@ -14,7 +14,7 @@ export default function App() {
     const helpText = helpContent.filter(x => x.pageId === 'general-search-layout')
     return (
         <>
-            <Stack>
+            <Stack sx={{ flexGrow: 0 }}>
                 {helpText[0].sections.map(row => (
                     <Box key={row.sectionId}>
                         <Divider variant="middle" flexItem sx={{ m: 5 }} />
