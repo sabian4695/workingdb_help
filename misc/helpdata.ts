@@ -399,13 +399,13 @@ export const helpContent: helpPage[] = [
                                 color: 'text.primary',
                                 variant: 'body1',
                                 text: "To get here, you can click here within the primary ECO search window:",
-                                image: "images/searching-oracle/ecos_revised_items_button.png"
+                                image: "/images/searching-oracle/ecos_revised_items_button.png"
                             },
                             {
                                 color: 'text.primary',
                                 variant: 'body1',
                                 text: "Simply search a part number here to load all ECOs ever generated for this part, included cancelled ECOs.",
-                                image: "images/searching-oracle/ecos_revised_items.png"
+                                image: "/images/searching-oracle/ecos_revised_items.png"
                             },
                             {
                                 color: 'text.primary',
@@ -432,7 +432,7 @@ export const helpContent: helpPage[] = [
                                 color: 'text.primary',
                                 variant: 'body1',
                                 text: "Simply search a part number here to load all ECOs for this person.",
-                                image: "images/searching-oracle/ecos_by_person.png"
+                                image: "/images/searching-oracle/ecos_by_person.png"
                             },
                             {
                                 color: 'text.primary',
