@@ -272,7 +272,14 @@ export const helpContent: helpPage[] = [
                         {
                             color: 'text.primary',
                             variant: 'body1',
-                            text: "Type in this search bar to dynamically search through all the links stored in WorkingDB."
+                            text: "The Favorites and Search Links areas are a great fast way to find various file locations.",
+                            image: "/images/general-search-layout/search_layout_search_links.png"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "Type in the search bar to dynamically search through all the links stored in WorkingDB.",
+                            image: "/images/general-search-layout/search_layout_search_bar.png"
                         },
                         {
                             color: 'text.primary',
@@ -282,7 +289,7 @@ export const helpContent: helpPage[] = [
                         {
                             color: 'text.primary',
                             variant: 'body1',
-                            text: "Click the \'Star\' next to a link to \'Favorite\' that link."
+                            text: "Click the \'Star\' next to a link to \'Favorite\' that link. It will automatically add it to the Favorites area."
                         }
                     ]
                 },
@@ -292,17 +299,17 @@ export const helpContent: helpPage[] = [
                         {
                             color: 'text.primary',
                             variant: 'body1',
-                            text: "test1"
+                            text: "The favorites bar is great for links you repeatedly access that are not part specific."
                         },
                         {
                             color: 'text.primary',
                             variant: 'body1',
-                            text: "test2"
+                            text: "I use it a lot for specific projects I\'m working on or general folders I access repeatedly."
                         },
                         {
                             color: 'text.primary',
                             variant: 'body1',
-                            text: "test3"
+                            text: "Click the \'Set Favorites\' button to modify your favorites links."
                         }
                     ]
                 }
@@ -310,27 +317,20 @@ export const helpContent: helpPage[] = [
             },
             {
                 sectionId: "misc-items",
-                sectionTitle: "Miscellaneous",
-                cards: [{
-                    title: "Other",
-                    contents: [
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test1"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test2"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test3"
-                        }
-                    ]
-                }]
+                sectionTitle: "Other Search Area Items",
+                cards: [
+                    {
+                        title: "Search History",
+                        contents: [
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "Click on this button to access your search history for your current session.",
+                                image: "/images/general-search-layout/search-layout-search-history.png"
+                            },
+                        ]
+                    },
+                ]
             },
         ]
     },
@@ -340,76 +340,160 @@ export const helpContent: helpPage[] = [
         pageName: "Oracle Search",
         sections: [
             {
+                sectionId: "reports",
+                sectionTitle: "Reports",
+                cards: [
+                    {
+                        title: "All Reports",
+                        contents: [
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "To get to the reports section, click here on the front page.",
+                                image: "/images/searching-oracle/reports_button.png"
+                            },
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "In the reports area, there are many buttons/options to choose from. All are detailed below.",
+                                image: "/images/searching-oracle/reports_button.png"
+                            },
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "Most of these are Oracle searches, but a few search other databases and other areas."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
                 sectionId: "ecos",
                 sectionTitle: "ECOs",
-                cards: [{
-                    title: "ECOs",
-                    contents: [
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test1"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test2"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test3"
-                        }
-                    ]
-                }]
+                cards: [
+                    {
+                        title: "ECOs",
+                        contents: [
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "This page lets you search by ECO number for ALL ORGS at once, including NCM.",
+                                image: "/images/searching-oracle/ecos.png"
+                            },
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "It shows all data we can currently access, included revised items."
+                            },
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "There are a few extra search tools for ECOs, \'By Revised Item\' and \'By Person\', shown below."
+                            }
+                        ]
+                    },
+                    {
+                        title: "ECOs By Revised Item",
+                        contents: [
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "To get here, you can click here within the primary ECO search window:",
+                                image: "images/searching-oracle/ecos_revised_items_button.png"
+                            },
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "Simply search a part number here to load all ECOs ever generated for this part, included cancelled ECOs.",
+                                image: "images/searching-oracle/ecos_revised_items.png"
+                            },
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "Click the little button next to the ECO number to see the details for this ECO."
+                            }
+                        ]
+                    },
+                    {
+                        title: "ECOs By Person",
+                        contents: [
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "To get here, you can click here within the primary ECO search window:",
+                                image: "/images/searching-oracle/ecos_by_person_button.png"
+                            },
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "NOTE: by default, this page searches by Design Engineer. Click the \'by PE Last, First\' button to filter by Project Engineer."
+                            },
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "Simply search a part number here to load all ECOs for this person.",
+                                image: "images/searching-oracle/ecos_by_person.png"
+                            },
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "Click the filter buttons on the right to show only the \'Not Approved\' ECOs or the \'Not Implemented\' ECOs (only approved ones)."
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 sectionId: "sifs",
                 sectionTitle: "SIFs (Sales Information Form)",
-                cards: [{
-                    title: "SIFs",
-                    contents: [
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test1"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test2"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test3"
-                        }
-                    ]
-                }]
+                cards: [
+                    {
+                        title: "SIFs",
+                        contents: [
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "test1"
+                            },
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "test2"
+                            },
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "test3"
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 sectionId: "item-categories",
                 sectionTitle: "Item Categories",
-                cards: [{
-                    title: "Item Categories",
-                    contents: [
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test1"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test2"
-                        },
-                        {
-                            color: 'text.primary',
-                            variant: 'body1',
-                            text: "test3"
-                        }
-                    ]
-                }]
+                cards: [
+                    {
+                        title: "Item Categories",
+                        contents: [
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "test1"
+                            },
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "test2"
+                            },
+                            {
+                                color: 'text.primary',
+                                variant: 'body1',
+                                text: "test3"
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 sectionId: "customer-item-xref",
@@ -735,6 +819,194 @@ export const helpContent: helpPage[] = [
                 sectionTitle: "Open ITRs",
                 cards: [{
                     title: "Open ITRs",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        }
+                    ]
+                }]
+            },
+        ]
+    },
+    {
+        route: 'other-front-page',
+        pageId: 'other-front-page',
+        pageName: 'Other Front Page',
+        sections: [
+            {
+                sectionId: "account-information",
+                sectionTitle: "Account Information",
+                cards: [{
+                    title: "Account Information",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }]
+            },
+            {
+                sectionId: "part-pictures",
+                sectionTitle: "Part Pictures",
+                cards: [{
+                    title: "Part Pictures",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test3"
+                        }
+                    ]
+                }]
+            },
+            {
+                sectionId: "pack-list",
+                sectionTitle: "Pack List",
+                cards: [{
+                    title: "Pack List",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        }
+                    ]
+                }]
+            },
+            {
+                sectionId: "3dex-sheet",
+                sectionTitle: "3Dex Sheet",
+                cards: [{
+                    title: "3Dex Sheet",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        }
+                    ]
+                }]
+            },
+            {
+                sectionId: "catia-macros",
+                sectionTitle: "Catia Macros",
+                cards: [{
+                    title: "Catia Macros",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        }
+                    ]
+                }]
+            },
+            {
+                sectionId: "settings",
+                sectionTitle: "Settings",
+                cards: [{
+                    title: "Settings",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        }
+                    ]
+                }]
+            },
+            {
+                sectionId: "feedback-more-info",
+                sectionTitle: "Feedback / More Info",
+                cards: [{
+                    title: "Feedback / More Info",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        }
+                    ]
+                }]
+            },
+            {
+                sectionId: "task-tracker",
+                sectionTitle: "Task Tracker",
+                cards: [{
+                    title: "Task Tracker",
+                    contents: [
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test1"
+                        },
+                        {
+                            color: 'text.primary',
+                            variant: 'body1',
+                            text: "test2"
+                        }
+                    ]
+                }]
+            },
+            {
+                sectionId: "calendar",
+                sectionTitle: "Calendar",
+                cards: [{
+                    title: "Calendar",
                     contents: [
                         {
                             color: 'text.primary',

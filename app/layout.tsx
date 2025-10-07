@@ -146,6 +146,7 @@ const treeList: itemWithDis[] = [
       { id: 'searching/general-search-layout#misc-items', label: 'Miscellaneous' },
 
       { id: 'searching/oracle', label: 'Oracle', subHeader: "Oracle" },
+      { id: 'searching/oracle#reports', label: 'Reports' },
       { id: 'searching/oracle#ecos', label: 'ECOs' },
       { id: 'searching/oracle#sifs', label: 'SIFs (Sales Information Form)' },
       { id: 'searching/oracle#item-categories', label: 'Item Categories' },
@@ -165,6 +166,21 @@ const treeList: itemWithDis[] = [
       { id: 'searching/other-search#cnl-lab-wos', label: 'CNL Lab WOs' },
       { id: 'searching/other-search#slb-tooling-notes', label: 'SLB Tooling DB Notes' },
       { id: 'searching/other-search#open-itrs', label: 'Open ITRs' },
+    ],
+  },
+  {
+    id: 'other-front-page',
+    label: 'Other Front Page Items',
+    children: [
+      { id: 'other-front-page#account-information', label: 'Account Information' },
+      { id: 'other-front-page#part-pictures', label: 'Part Pictures' },
+      { id: 'other-front-page#pack-list', label: 'Pack List' },
+      { id: 'other-front-page#3dex-sheet', label: '3Dex Sheet' },
+      { id: 'other-front-page#catia-macros', label: 'Catia Macros' },
+      { id: 'other-front-page#settings', label: 'Settings' },
+      { id: 'other-front-page#feedback-more-info', label: 'Feedback / More Info' },
+      { id: 'other-front-page#task-tracker', label: 'Task Tracker' },
+      { id: 'other-front-page#calendar', label: 'Calendar' },
     ],
   },
   // {
