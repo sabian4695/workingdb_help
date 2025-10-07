@@ -497,11 +497,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 />
                 <List dense sx={{ width: '100%', bgcolor: 'background.paper' }}>
                   {filterResults.map(x => (
-                    <ListItemButton onClick={() => handleSearchClick(x.route)} key={x.pageId}>
-                      <ListItemText primary={x.pageName} />
-                      {/* <ListItemText primary={x.pageName} secondary={x.sections[0].sectionTitle} /> */}
-                    </ListItemButton>
-                  ))}
+                    {
+                      x.map(rows => (
+                        <ListItemButton onClick={() => handleSearchClick(x.route + "#" + rows.sectionId)} key={x.pageId}>
+                          <ListItemText primary={x.pageName} secondary={rows.sectionTitle} />
+                        </ListItemButton>
+                      ))
+                    }
+                  ))
+                  }
                 </List>
               </Stack>
             </DialogContent>
