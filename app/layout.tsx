@@ -386,7 +386,27 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   const filterItems = (targetText: string) => {
     if (targetText.length > 0) {
-      const filtered = helpContent.filter((data) => JSON.stringify(data).toLowerCase().indexOf(targetText.toLowerCase()) !== -1);
+      const lowerCaseText = targetText.toLowerCase()
+      const filtered = helpContent.filter((data) => {
+        return (
+          data.pageName.toLowerCase().includes(lowerCaseText) ||
+          data.sections.filter(x => {
+            return (
+              x.sectionTitle.toLowerCase().includes(lowerCaseText) ||
+              x.cards.filter(y => {
+                return (
+                  y.title.toLowerCase().includes(lowerCaseText) ||
+                  y.contents.filter(z => {
+                    return (
+                      z.text.toLowerCase().includes(lowerCaseText)
+                    )
+                  })
+                )
+              })
+            )
+          })
+        )
+      });
       setFilterResults(filtered)
     } else {
       setFilterResults(helpContent)
