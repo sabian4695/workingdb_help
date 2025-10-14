@@ -19,7 +19,7 @@ import Grow from '@mui/material/Grow';
 export default function App() {
   return (
     <>
-      <Stack sx={{ width: '100%' }}>
+      <Stack sx={{ width: '100%', maxWidth: '1200px', alignSelf: 'center' }}>
         <Grow in={true}>
           <Box sx={{ p: 10 }}>
             <Image

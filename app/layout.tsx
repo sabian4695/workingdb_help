@@ -111,6 +111,16 @@ const getIconFromFileType = (fileType: FileType) => {
   }
 };
 
+type helpSearchItems = {
+  pageId: string,
+  pageName: string,
+  pageRoute: string,
+  secId: string,
+  secName: string,
+  cardName: string,
+  textContents: string,
+}
+
 type itemWithDis = TreeViewBaseItem<{
   id: string;
   label: string;
@@ -382,34 +392,39 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     filterItems(event.target.value)
   }
 
-  const [filterResults, setFilterResults] = React.useState(helpContent);
+  //@ts-ignore
+  const helpSections: helpSearchItems[] = helpContent.map(x => (
+    x.sections.map(sec => (
+      sec.cards.map(card => (
+        card.contents.map(cont => (
+          {
+            pageId: x.pageId,
+            pageName: x.pageName,
+            pageRoute: x.route,
+            secId: sec.sectionId,
+            secName: sec.sectionTitle,
+            cardName: card.title,
+            textContents: cont.text
+          }
+        ))
+      ))
+    ))
+  )).flat(Infinity)
+
+  const [filterResults, setFilterResults] = React.useState<helpSearchItems[]>(helpSections);
 
   const filterItems = (targetText: string) => {
     if (targetText.length > 0) {
       const lowerCaseText = targetText.toLowerCase()
-      const filtered = helpContent.filter((data) => {
-        return (
-          data.pageName.toLowerCase().includes(lowerCaseText) ||
-          data.sections.filter(x => {
-            return (
-              x.sectionTitle.toLowerCase().includes(lowerCaseText) ||
-              x.cards.filter(y => {
-                return (
-                  y.title.toLowerCase().includes(lowerCaseText) ||
-                  y.contents.filter(z => {
-                    return (
-                      z.text.toLowerCase().includes(lowerCaseText)
-                    )
-                  })
-                )
-              })
-            )
-          })
-        )
-      });
-      setFilterResults(filtered)
+      const filterArray: helpSearchItems[] = helpSections.filter((data) => (
+        data.pageName.toLowerCase().includes(lowerCaseText) ||
+        data.secName.toLowerCase().includes(lowerCaseText) ||
+        data.cardName.toLowerCase().includes(lowerCaseText) ||
+        data.textContents.toLowerCase().includes(lowerCaseText)
+      ))
+      setFilterResults(filterArray)
     } else {
-      setFilterResults(helpContent)
+      setFilterResults(helpSections)
     }
   }
 
@@ -503,6 +518,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </DialogContentText>
                 <TextField
                   value={searchText}
+                  autofocus
                   onChange={(event: any) => setText(event)}
                   slotProps={{
                     input: {
@@ -516,12 +532,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   variant="standard"
                 />
                 <List dense sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                  {filterResults.map(x => (
-                    x.sections.map(rows => (
-                      <ListItemButton onClick={() => handleSearchClick(x.route + "#" + rows.sectionId)} key={x.pageId}>
-                        <ListItemText primary={x.pageName} secondary={rows.sectionTitle} />
-                      </ListItemButton>
-                    ))
+                  {filterResults.map((x, index) => (
+                    <ListItemButton onClick={() => handleSearchClick(x.pageRoute + "#" + x.secId)} key={index}>
+                      <ListItemText primary={x.pageName + ', ' + x.secName} secondary={x.textContents.slice(0, 50) + '...'} />
+                    </ListItemButton>
                   ))
                   }
                 </List>

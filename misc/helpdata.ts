@@ -94,7 +94,7 @@ export const helpContent: helpPage[] = [
                 sectionId: "first-open",
                 sectionTitle: "First Time Opening WorkingDB",
                 cards: [{
-                    title: "Typical Method",
+                    title: "Let\'s open this!",
                     contents: [
                         {
                             color: 'text.primary',
