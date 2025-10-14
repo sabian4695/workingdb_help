@@ -518,7 +518,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </DialogContentText>
                 <TextField
                   value={searchText}
-                  autofocus
                   onChange={(event: any) => setText(event)}
                   slotProps={{
                     input: {
