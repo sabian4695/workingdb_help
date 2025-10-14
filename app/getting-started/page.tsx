@@ -14,22 +14,22 @@ export default function App() {
     const helpText = helpContent.filter(x => x.pageId === 'getting-started')
     return (
         <>
-            <Stack>
-                {helpText[0].sections.map(row => (
-                    <Box key={row.sectionId}>
+            <Stack sx={{ width: '100%', maxWidth: '1200px', alignSelf: 'center' }}>
+                {helpText[0].sections.map((row, rowIndex) => (
+                    <Box key={row.sectionId + rowIndex}>
                         <Divider variant="middle" flexItem sx={{ m: 5 }} />
                         <Grow in={true}>
                             <Typography id={row.sectionId} variant="h3">
                                 {row.sectionTitle}
                             </Typography>
                         </Grow>
-                        {row.cards.map(y => (
-                            <Grow key={y.title} in={true}>
+                        {row.cards.map((y, yIndex) => (
+                            <Grow key={y.title + yIndex} in={true}>
                                 <Paper elevation={3} sx={{ borderRadius: '10px', p: 3, m: 5 }}>
                                     <Stack spacing={3}>
                                         <Typography variant="h5" color='text.secondary'>{y.title}</Typography>
-                                        {y.contents.map(x => (
-                                            <Box key={x.text}>
+                                        {y.contents.map((x, xIndex) => (
+                                            <Box key={xIndex}>
                                                 <Typography color={x.color} variant={x.variant} >{x.text}</Typography>
                                                 {x.image !== undefined ?
                                                     <Card elevation={1} sx={{ borderRadius: '10px', alignSelf: 'center', justifySelf: 'center' }}>

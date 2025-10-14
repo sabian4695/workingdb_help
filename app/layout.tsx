@@ -111,6 +111,16 @@ const getIconFromFileType = (fileType: FileType) => {
   }
 };
 
+type helpSearchItems = {
+  pageId: string,
+  pageName: string,
+  pageRoute: string,
+  secId: string,
+  secName: string,
+  cardName: string,
+  textContents: string,
+}
+
 type itemWithDis = TreeViewBaseItem<{
   id: string;
   label: string;
@@ -142,10 +152,11 @@ const treeList: itemWithDis[] = [
     children: [
       { id: 'searching/general-search-layout', label: 'Part Search Overview', subHeader: "Part Search Overview" },
       { id: 'searching/general-search-layout#general-search-layout', label: 'General Search Layout' },
-      { id: 'searching/general-search-layout#search-bar', label: 'File Search Bar' },
+      { id: 'searching/general-search-layout#search-links', label: 'File Search Bar' },
       { id: 'searching/general-search-layout#misc-items', label: 'Miscellaneous' },
 
       { id: 'searching/oracle', label: 'Oracle', subHeader: "Oracle" },
+      { id: 'searching/oracle#reports', label: 'Reports' },
       { id: 'searching/oracle#ecos', label: 'ECOs' },
       { id: 'searching/oracle#sifs', label: 'SIFs (Sales Information Form)' },
       { id: 'searching/oracle#item-categories', label: 'Item Categories' },
@@ -165,6 +176,21 @@ const treeList: itemWithDis[] = [
       { id: 'searching/other-search#cnl-lab-wos', label: 'CNL Lab WOs' },
       { id: 'searching/other-search#slb-tooling-notes', label: 'SLB Tooling DB Notes' },
       { id: 'searching/other-search#open-itrs', label: 'Open ITRs' },
+    ],
+  },
+  {
+    id: 'other-front-page',
+    label: 'Other Front Page Items',
+    children: [
+      { id: 'other-front-page#account-information', label: 'Account Information' },
+      { id: 'other-front-page#part-pictures', label: 'Part Pictures' },
+      { id: 'other-front-page#pack-list', label: 'Pack List' },
+      { id: 'other-front-page#3dex-sheet', label: '3Dex Sheet' },
+      { id: 'other-front-page#catia-macros', label: 'Catia Macros' },
+      { id: 'other-front-page#settings', label: 'Settings' },
+      { id: 'other-front-page#feedback-more-info', label: 'Feedback / More Info' },
+      { id: 'other-front-page#task-tracker', label: 'Task Tracker' },
+      { id: 'other-front-page#calendar', label: 'Calendar' },
     ],
   },
   // {
@@ -366,14 +392,39 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     filterItems(event.target.value)
   }
 
-  const [filterResults, setFilterResults] = React.useState(helpContent);
+  //@ts-ignore
+  const helpSections: helpSearchItems[] = helpContent.map(x => (
+    x.sections.map(sec => (
+      sec.cards.map(card => (
+        card.contents.map(cont => (
+          {
+            pageId: x.pageId,
+            pageName: x.pageName,
+            pageRoute: x.route,
+            secId: sec.sectionId,
+            secName: sec.sectionTitle,
+            cardName: card.title,
+            textContents: cont.text
+          }
+        ))
+      ))
+    ))
+  )).flat(Infinity)
+
+  const [filterResults, setFilterResults] = React.useState<helpSearchItems[]>(helpSections);
 
   const filterItems = (targetText: string) => {
     if (targetText.length > 0) {
-      const filtered = helpContent.filter((data) => JSON.stringify(data).toLowerCase().indexOf(targetText.toLowerCase()) !== -1);
-      setFilterResults(filtered)
+      const lowerCaseText = targetText.toLowerCase()
+      const filterArray: helpSearchItems[] = helpSections.filter((data) => (
+        data.pageName.toLowerCase().includes(lowerCaseText) ||
+        data.secName.toLowerCase().includes(lowerCaseText) ||
+        data.cardName.toLowerCase().includes(lowerCaseText) ||
+        data.textContents.toLowerCase().includes(lowerCaseText)
+      ))
+      setFilterResults(filterArray)
     } else {
-      setFilterResults(helpContent)
+      setFilterResults(helpSections)
     }
   }
 
@@ -480,12 +531,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   variant="standard"
                 />
                 <List dense sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                  {filterResults.map(x => (
-                    <ListItemButton onClick={() => handleSearchClick(x.route)} key={x.pageId}>
-                      <ListItemText primary={x.pageName} />
-                      {/* <ListItemText primary={x.pageName} secondary={x.sections[0].sectionTitle} /> */}
+                  {filterResults.map((x, index) => (
+                    <ListItemButton onClick={() => handleSearchClick(x.pageRoute + "#" + x.secId)} key={index}>
+                      <ListItemText primary={x.pageName + ', ' + x.secName} secondary={x.textContents.slice(0, 50) + '...'} />
                     </ListItemButton>
-                  ))}
+                  ))
+                  }
                 </List>
               </Stack>
             </DialogContent>

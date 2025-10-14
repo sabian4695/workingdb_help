@@ -11,7 +11,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Grow from '@mui/material/Grow';
 
 export default function App() {
-    const helpText = helpContent.filter(x => x.pageId === 'searching')
+    const helpText = helpContent.filter(x => x.pageId === 'other-front-page')
     return (
         <>
             <Stack sx={{ width: '100%', maxWidth: '1200px', alignSelf: 'center' }}>
