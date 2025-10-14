@@ -9,12 +9,13 @@ import { helpContent } from '../../../misc/helpdata'
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import Grow from '@mui/material/Grow';
+import { highStackStyles, paperStyles, contentTextStyles, cardMediaStyles, cardStyles } from '@/misc/globalStyles';
 
 export default function App() {
     const helpText = helpContent.filter(x => x.pageId === 'general-search-layout')
     return (
         <>
-            <Stack sx={{ width: '100%', maxWidth: '1200px', alignSelf: 'center' }}>
+            <Stack sx={highStackStyles}>
                 {helpText[0].sections.map((row, rowIndex) => (
                     <Box key={row.sectionId + rowIndex}>
                         <Divider variant="middle" flexItem sx={{ m: 5 }} />
@@ -25,18 +26,18 @@ export default function App() {
                         </Grow>
                         {row.cards.map((y, yIndex) => (
                             <Grow key={y.title + yIndex} in={true}>
-                                <Paper elevation={3} sx={{ borderRadius: '10px', p: 3, m: 5 }}>
+                                <Paper elevation={3} sx={paperStyles}>
                                     <Stack spacing={3}>
                                         <Typography variant="h5" color='text.secondary'>{y.title}</Typography>
                                         {y.contents.map((x, xIndex) => (
-                                            <Box key={xIndex}>
-                                                <Typography color={x.color} variant={x.variant} >{x.text}</Typography>
+                                            <Box key={xIndex} >
+                                                <Typography color={x.color} variant={x.variant} sx={contentTextStyles} >{x.text}</Typography>
                                                 {x.image !== undefined ?
-                                                    <Card elevation={1} sx={{ borderRadius: '10px', alignSelf: 'center', justifySelf: 'center' }}>
+                                                    <Card elevation={1} sx={cardStyles}>
                                                         <CardMedia
                                                             component="img"
                                                             src={x.image}
-                                                            sx={{ minHeight: 300 }}
+                                                            sx={cardMediaStyles}
                                                         />
                                                     </Card>
                                                     : null}
