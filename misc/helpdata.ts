@@ -1,24 +1,24 @@
 type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2' | 'caption' | 'button' | 'overline';
 
-interface itemContent {
+export interface itemContent {
     color: string,
     variant: TypographyVariant,
     text: string,
     image?: string
 }
 
-interface itemCard {
+export interface itemCard {
     title: string,
     contents: itemContent[]
 }
 
-interface sectionContent {
+export interface sectionContent {
     sectionId: string,
     sectionTitle: string,
     cards: itemCard[]
 }
 
-interface helpPage {
+export interface helpPage {
     route: string,
     pageId: string;
     pageName: string;
