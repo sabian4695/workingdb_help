@@ -1,6 +1,5 @@
 "use client"
 import React from "react";
-import "./globals.css";
 import { createTheme } from "@mui/material/styles";
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
@@ -11,7 +10,6 @@ import Image from 'next/image'
 import Box from '@mui/material/Box';
 import { RichTreeView } from '@mui/x-tree-view/RichTreeView';
 import { TreeViewBaseItem } from '@mui/x-tree-view/models';
-import Divider from '@mui/material/Divider';
 import { useRouter } from 'next/navigation'
 import { usePathname } from 'next/navigation'
 import DialogTitle from '@mui/material/DialogTitle';
